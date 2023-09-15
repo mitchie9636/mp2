@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- locals.title?title:'T.O.S Main Page' -%></title>
+    <title><%= locals.title ? locals.title : 'T.O.S Main Page' %></title>
     <link rel="icon" href="/static/assets/tos logo.png">
     <link rel="stylesheet" href="/static/main.css">
 </head>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="signup-container">
-            <a class="links" href="/static/login.ejs">Log In/Sign In</a>
+            <a class="links" href="/">Log In/Sign In</a>
             <a class="links" href="employers.html">Employers/Job Post</a>
         </div>
     </nav>
@@ -33,17 +33,15 @@
         <div class="locationsearch-container">
         <input class="location-container" type="text" placeholder="City, province or POEA">
         </div>
-        <div>
-            <!-- <button class="find-button">Find Jobs</button> -->
-            <button id="find-jobs-button" class="find-button">Find Jobs</button>
-
-        </div>
+       
         <div class="text">
-            <a class="post-link" href="/static/login.ejs"> Post your resume</a> - It only takes a few seconds
+            <a class="post-link" href="login"> Post your resume</a> - It only takes a few seconds
+        </div>
+        <div>
+            <button id="find-jobs-button" class="find-button">Find Jobs</button>
         </div>
     </main>
 
-   
     <!-- Your custom JavaScript code goes here -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>

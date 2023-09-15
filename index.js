@@ -23,22 +23,22 @@ app.use('/assets', express.static(path.join(__dirname, 'public')));
 //     res.render('main', { jobs });  //path for html file
 // });
 
-// app.get('/', (req, res)=>{
-//     res.render('main');
-// });
+app.get('/', (req, res)=>{
+    res.render('main');
+});
 
-app.get('main', (req, res) => {
-    const navlinks = [
-      { text: 'Main', url: path.join(mainPath) },
-      { text: 'Find Jobs', url: path.join(findJobsPath) },
-      { text: 'Company Reviews', url: path.join(companyReviewsPath) },
-      { text: 'Find Salaries', url: path.join(findSalariesPath) },
-      { text: 'Log In', url: path.join(logInPath) },
-      { text: 'Employers', url: path.join(employersPath) },
-    ];
+// app.get('main', (req, res) => {
+//     const navlinks = [
+//       { text: 'Main', url: path.join(mainPath) },
+//       { text: 'Find Jobs', url: path.join(findJobsPath) },
+//       { text: 'Company Reviews', url: path.join(companyReviewsPath) },
+//       { text: 'Find Salaries', url: path.join(findSalariesPath) },
+//       { text: 'Log In', url: path.join(logInPath) },
+//       { text: 'Employers', url: path.join(employersPath) },
+//     ];
   
-    res.render('main', { navlinks });
-  });
+//     res.render('main', { navlinks });
+//   });
   
 
 

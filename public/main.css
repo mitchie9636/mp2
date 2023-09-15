@@ -37,22 +37,22 @@ nav {
 
 .search-container {
     float: left;
-    width: 400px;
-    height: 45px;
+    width: 500px;
+    height: 50px;
     border: 1px solid gold;
-    margin-left: 230px;
+    margin-left: 300px;
     margin-top: 150px;
     border-radius: 10px;
 }
 
 .location-container {
     float: right;
-    width: 400px;
-    height: 45px;
+    width: 500px;
+    height: 50px;
     border: 1px solid gold;
     margin-top: 150px;
     border-radius: 10px;
-    margin-right: 290px;
+    margin-right: 500px;
 }
 
 .find-button{
@@ -60,7 +60,7 @@ nav {
     height: 50px;
     margin-top: -50px;
     border-radius: 10px;
-    margin-right: 200px;
+    margin-right: 380px;
     padding: 10px;
     background: gold;
     border: 1px solid gold;
@@ -249,25 +249,3 @@ nav {
     box-sizing: border-box;
   }
   
-  body {
-    margin: 1%;
-    font-family: Arial;
-    font-size: 17px;
-  }
-  
-  #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 50%; 
-    min-height: 50%;
-  }
-  
-  .content {
-    position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-  }

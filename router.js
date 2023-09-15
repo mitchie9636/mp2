@@ -15,6 +15,10 @@ router.get('/', (req, res)=>{
     res.render('login',{title:'Login Page'});
 });
 
+router.get('main', (req, res)=>{
+    res.render('main',{title:'main Page'});
+});
+
 //route to authenticate a user
 router.post('/login', [
     check('email')
