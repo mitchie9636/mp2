@@ -23,9 +23,9 @@ app.use('/assets', express.static(path.join(__dirname, 'public')));
 //     res.render('main', { jobs });  //path for html file
 // });
 
-app.get('/', (req, res)=>{
-    res.render('main');
-});
+// app.get('/', (req, res)=>{
+//     res.render('main');
+// });
 
 // app.get('main', (req, res) => {
 //     const navlinks = [
@@ -42,6 +42,9 @@ app.get('/', (req, res)=>{
   
 
 
+// app.get('/login', (req, res)=>{
+//     res.render('login',{title:'Login Page'});
+// });
 
 
 // app.post('/post-job', (req, res) => {
@@ -49,6 +52,8 @@ app.get('/', (req, res)=>{
 //     jobs.push({ title: jobTitle, description: jobDescription });
 //     res.redirect('/');
 // });
+//set the routes    
+app.use('/', router)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running at http://${process.env.HOSTNAME}:${process.env.PORT}.`);

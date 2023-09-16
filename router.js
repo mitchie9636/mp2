@@ -11,11 +11,12 @@ const credential = {
 };
 
 //route to the login page
-router.get('/', (req, res)=>{
+router.get('/login', (req, res)=>{
     res.render('login',{title:'Login Page'});
 });
 
-router.get('main', (req, res)=>{
+
+router.get('/main', (req, res)=>{
     res.render('main',{title:'main Page'});
 });
 
