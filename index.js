@@ -13,47 +13,55 @@ app.use(express.static('public'));
 
 
 app.set('view engine', 'ejs');
+app.set('/static', express.static(path.join(__dirname, 'public')));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 
-// const jobs = [];
 
-// app.get('/', (req, res) => {
-//     res.render('main', { jobs });  //path for html file
-// });
+const jobs = [];
 
-// app.get('/', (req, res)=>{
-//     res.render('main');
-// });
+app.get('/', (req, res) => {
+    res.render('main', {title:'Main Page' });  //path for html file
+});
 
-// app.get('main', (req, res) => {
-//     const navlinks = [
-//       { text: 'Main', url: path.join(mainPath) },
-//       { text: 'Find Jobs', url: path.join(findJobsPath) },
-//       { text: 'Company Reviews', url: path.join(companyReviewsPath) },
-//       { text: 'Find Salaries', url: path.join(findSalariesPath) },
-//       { text: 'Log In', url: path.join(logInPath) },
-//       { text: 'Employers', url: path.join(employersPath) },
-//     ];
-  
-//     res.render('main', { navlinks });
-//   });
-  
+app.get('login', (req, res) => {
+    res.render('login', {title:'Login Page' });  //path for html file
+});
 
 
-// app.get('/login', (req, res)=>{
-//     res.render('login',{title:'Login Page'});
-// });
+app.get('/signup', (req, res) => {
+    res.render('signup'); // Render the 'signup.ejs' view
+  });
+
+// Post AREA-----------------------------------------------------------------------------------------------
 
 
-// app.post('/post-job', (req, res) => {
-//     const { jobTitle, jobDescription } = req.body;
-//     jobs.push({ title: jobTitle, description: jobDescription });
-//     res.redirect('/');
-// });
+app.post('/login', (req, res)=>{
+    
+    res.render('login',{title:'Login Page'});
+});
+
+
+
+
+  app.post('/', (req, res) => {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
+
+    res.redirect('/thank-you');
+  });
+
+app.get('/', (req, res)=>{
+    res.render('main');
+});
+
+
 //set the routes    
 app.use('/', router)
+app.use('/signup', router)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running at http://${process.env.HOSTNAME}:${process.env.PORT}.`);

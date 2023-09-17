@@ -1,12 +1,23 @@
+body {
+    background-image: url("/static/assets/mainPage2.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+  }
+
 .brand {
     float: left;
     margin-left: 40px;
-    margin-top: 30px;
+    margin-top: 15px;
     font-family: sans-serif;
     color: gold;
+    font-weight: 900;
+    font-size: 40px;
 }
 nav {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(134, 127, 9, 0.585);
 }
 .brand-title {
     display: inline-block;
@@ -26,8 +37,10 @@ nav {
 
 .links {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(172, 164, 8);
     font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 900;
     margin-left: 60px;
 }
 
@@ -38,33 +51,33 @@ nav {
 .search-container {
     float: left;
     width: 500px;
-    height: 50px;
+    height: 60px;
     border: 1px solid gold;
-    margin-left: 300px;
-    margin-top: 150px;
+    margin-left: 80px;
+    margin-top: 250px;
     border-radius: 10px;
 }
 
 .location-container {
     float: right;
     width: 500px;
-    height: 50px;
+    height: 60px;
     border: 1px solid gold;
-    margin-top: 150px;
+    margin-top: 250px;
     border-radius: 10px;
     margin-right: 500px;
 }
 
 .find-button{
     float: right;
-    height: 50px;
-    margin-top: -50px;
+    height: 60px;
+    margin-top: -60px;
     border-radius: 10px;
     margin-right: 380px;
     padding: 10px;
     background: gold;
     border: 1px solid gold;
-    color: white;
+    color: rgb(9, 9, 9);
     font-weight: bolder;
 }
 
@@ -77,6 +90,7 @@ nav {
     margin-left: 500px;
     margin-top: 50px;
     font-family: sans-serif;
+    font-size:x-large;
 }
 
 .post-link {
@@ -89,163 +103,21 @@ nav {
     color: rgba(255, 217, 0, 0.479);
 }
 
-.agencytitle-container {
-    float: right;
-    margin-right: 500px;
-    margin-top: 40px;
-    font-family: sans-serif;
-    color: gold;
+/* Adjust styles for smaller screens
+@media (max-width: 768px) {
+    .jobsearch-container {
+        width: 80%;
+    }
+
+    .locationsearch-container {
+        width: 80%;
+    }
 }
 
-.login-container {
-    border: solid 1.5px rgba(0, 0, 0, 0.212);
-    width: 450px;
-    height: 550px;
-    float: right;
-    margin-top: 130px;
-    margin-right: -370px;
-    border-radius: 10px;
-    box-shadow: 1px 2px 28px -7px rgba(0,0,0,0.75);
-}
-
-.login-header {
-    font-family: Arial;
-    margin-left: 20px;
-}
-
-.login-text {
-    font-family: Arial;
-    font-size: 15px;
-    margin-left: 20px;
-    color: rgba(0, 0, 0, 0.534);
-}
-
-.termsandconditions {
-    font-family: Helvetica;
-    font-size: 12px;
-    margin-left: 20px;
-    margin-right: 20px;
-    color: rgba(0, 0, 0, 0.534);
-}
-
-.google-container {
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 400px;
-    height: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.295);
-    border-radius: 10px;
-}
-
-.apple-container {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 400px;
-    height: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.295);
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.google-logo {
-    float: left;
-    margin-top: 7px;
-    margin-left: 10px;
-}
-
-.btn-google {
-    display: inline-block;
-    font-size: larger;
-    font-weight: bold;
-    margin-left: -40px;
-}
-.btn-apple {
-    display: inline-block;
-    font-size: larger;
-    font-weight: bold;
-    margin-left: -50px;
-}
-
-
-.google-container:hover {
-    border: 1px solid gold;
-    background: rgba(255, 217, 0, 0.171);
-    transition: 1.5s;
-}
-
-.apple-logo {
-    float: left;
-    margin-top: 3px;
-    margin-left: -10px;
-}
-
-.apple-container:hover {
-    border: 1px solid gold;
-    background: rgba(255, 217, 0, 0.171);
-    transition: 1.5s;
-}
-
-.line-br {
-   display: block;
-   text-align: center;
-   font-family: Verdana;
-   margin-top: 30px;
-   font-size: 15px;
-   color: rgba(0, 0, 0, 0.5);
-}
-
-.txt-email-add {
-    display: block;
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 10px;
-    font-family: Verdana;
-    font-weight: bold;
-}
-
-.email-add-cont {
-    width: 390px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 15px;
-}
-
-.email-input {
-    margin-left: 20px;
-    margin-right: 20px;
-    border: 0.5px solid rgba(0, 0, 0, 0.007);
-    margin-top: 15px;
-}
-
-.email-add-cont:hover {
-    border: 2px solid gold;
-    box-shadow: 5px 5px 0px 0px rgba(255,215,0,0.4);
-}
-
-.continue-container {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 400px;
-    height: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.295);
-    border-radius: 10px;
-    margin-top: 15px;
-    background: rgba(255, 217, 0, 0.637);
-}
-
-.btn-continue {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: sans-serif;
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-* {
-    box-sizing: border-box;
-  }
-  
+/* Mobile styles */
+/* @media (max-width: 480px) {
+    .jobsearch-container,
+    .locationsearch-container {
+        width: 100%;
+    }
+} */ */

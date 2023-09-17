@@ -1,194 +1,196 @@
-@import "compass/css3";
 
-body-bg: #c1bdba;
-form-bg: #13232f;
-white: #ffffff;
-
-main: #1ab188;
-main-light: lighten($main, 5%);
-main-dark: darken($main, 5%);
-
-gray-light: #a0b3b0;
-gray: #ddd;
-
-thin: 300;
-normal: 400;
-bold: 600;
-br: 4px;
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html {
-  overflow-y: scroll;
-}
 
 body {
-  background: body-bg;
-  font-family: "Titillium Web", sans-serif;
+  background-image: url("/static/assets/tos\ background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-a {
-  text-decoration: none;
-  color: main;
-  transition: 0.5s ease;
-  &:hover {
-    color: main-dark;
-  }
+.agencytitle-container {
+  float: right;
+  margin-right: 720px;
+  margin-top: 10px;
+  font-family: sans-serif;
+  color: gold;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  
+
 }
 
-.form {
-  background: rgba(form-bg, 0.9);
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: br;
-  box-shadow: 0 4px 10px 4px rgba(form-bg, 0.3);
+.login-container {
+  border: solid 1.5px rgba(0, 0, 0, 0.541);
+  width: 450px;
+  height: 760px;
+  float: right;
+  margin-top: 100px;
+  margin-right: -460px;
+  border-radius: 10px;
+  background-color: rgba(175, 164, 164, 0.613);
+  box-shadow: 1px 2px 28px -7px rgba(0, 0, 0, 0.992);
+  
 }
 
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  li a {
-    display: block;
-    text-decoration: none;
-    padding: 15px;
-    background: rgba(gray-light, 0.25);
-    color: gray-light;
-    font-size: 20px;
-    float: left;
-    width: 50%;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.5s ease;
-    &:hover {
-      background: main-dark;
-      color: white;
-    }
-  }
-  .active a {
-    background: main;
-    color: white;
-  }
+.login-header {
+  font-family: Arial;
+  margin-left: 20px;
 }
 
-.tab-content > div:last-child {
-  display: none;
+.login-text {
+  font-family: Arial;
+  font-size: 15px;
+  margin-left: 20px;
+  color: rgba(9, 8, 8, 0.912);
 }
 
-h1 {
-  text-align: center;
-  color: white;
-  font-weight: thin;
-  margin: 0 0 40px;
+.termsandconditions {
+  font-family: Helvetica;
+  font-size: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: rgba(0, 0, 0, 0.841);
 }
 
-label {
-  position: absolute;
-  transform: translateY(6px);
-  left: 13px;
-  color: rgba(white, 0.5);
-  transition: all 0.25s ease;
-  pointer-events: none;
-  font-size: 22px;
-  .req {
-    margin: 2px;
-    color: main;
-  }
+.google-container {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 300px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  border-radius: 10px;
 }
 
-label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-  .req {
-    opacity: 0;
-  }
+.apple-container {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 300px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
-label.highlight {
-  color: white;
+.google-logo {
+  display: inline-block;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: -10%;
+    margin-left: -40px;
 }
 
-input,
-textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid gray-light;
-  color: white;
-  border-radius: 0;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  &:focus {
-    outline: 0;
-    border-color: main;
-  }
+.btn-google {
+  display: inline-block;
+  font-size:medium;
+  font-weight: bold;
+  margin-top: 1%;
+  margin-left: 50px;
+}
+.btn-apple {
+  display: inline-block;
+  font-size:medium;
+  font-weight: bold;
+  margin-top: 1%;
+  margin-left: 50px;
 }
 
-textarea {
-  border: 2px solid gray-light;
-  resize: vertical;
+
+.google-container:hover {
+  border: 1px solid gold;
+  background: rgba(255, 217, 0, 0.171);
+  transition: 1.5s;
+}
+
+.apple-logo {
+  float: left;
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: -10%;
+  margin-left: -40px;
+}
+
+.apple-container:hover {
+  border: 1px solid gold;
+  background: rgba(255, 217, 0, 0.171);
+  transition: 1.5s;
+}
+
+.line-br {
+ display: block;
+ text-align: center;
+ font-family: Verdana;
+ margin-top: 30px;
+ font-size: 15px;
+ color: rgba(8, 8, 8, 0.886);
 }
 
 .field-wrap {
-  position: relative;
-  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
-.top-row {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.field-wrap label {
+  display: block;
+  color: #0b0b0b;
+  margin-bottom: 5px;
+  margin-left: 5%;
 
-  > div {
-    float: left;
-    width: 48%;
-    margin-right: 4%;
-    &:last-child {
-      margin: 0;
-    }
-  }
 }
 
+.field-wrap input[type="email"],
+.field-wrap input[type="password"] {
+    width: 82%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    margin-left: 5%;
+}
+
+.field-wrap input[type="email"]:hover,
+.field-wrap input[type="password"]:hover {
+  border: 5px solid gold;
+  background: rgba(255, 217, 0, 0.171);
+  transition: 1.5s;
+}
+
+
+/* Style the "Log In" and "Sign Up" buttons */
 .button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
+  background-color: #685c20;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: main;
-  color: white;
-  transition: all.5s ease;
-  &:hover,
-  &:focus {
-    background: main-dark;
-  }
 }
 
 .button-block {
-  display: block;
-  width: 100%;
+  width: 30%;
+  margin-top: 15px;
+  margin-left: 2%
+}
+.button:hover {
+  background-color: #685c20;
+  border: 1px solid gold;
+  background: rgba(8, 7, 1, 0.171);
+  transition: 1.5s;
 }
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
+/* CSS for Forgot Password? link */
+a.forgot {
+  color: #465012;
+  text-decoration: none;
+  margin-left: 10%;
+  transition: color 0.3s; 
+  font-size:x-large;
 }
+
+a.forgot:hover {
+  color: #070600; 
+}
+

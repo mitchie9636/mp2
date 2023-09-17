@@ -3,37 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- locals.title?title:'Login Page' -%></title>
-    <link rel="stylesheet" href="styles.css">
+    <title><%= locals.title ? locals.title : 'Login Page' %></title>
+    <link rel="icon" href="/static/assets/logo.png">
+    <link rel="stylesheet" href="/static/login/login.css">
+
+    <!-- Add jQuery and jQuery Mobile -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-        <div class="agencytitle-container">
-            <h2 class="agency-title">Trio Outsourcing Services</h2>
-        </div>
-        <div class="login-container">
-            <h2 class="login-header">Ready to take the next step?</h2>
-            <p class="login-text">Create an account or sign in.</p>
-            <p class="termsandconditions">By creating an account or logging in, you understand and agree to T.O.S.'s Terms. You also acknowledge our Cookie and Privacy policies. You will receive marketing messages from T. O. S. and may opt out at any time by following the unsubscribe link in our messages, or as detailed in our terms.</p>
-            <button class="google-container">
-                <a href="#">
-                <img class="google-logo" src="images/google.png" width="30px" alt="Error">
+    <div class="agencytitle-container">
+        <h2 class="agency-title">Trio Outsourcing Services</h2>
+    </div>
+    <div class="login-container">
+        <h2 class="login-header">Ready to take the next step?</h2>
+        <p class="login-text">Create an account or sign in.</p>
+        <p class="termsandconditions">By creating an account or logging in, you understand and agree to <strong style="color:rgb(200, 194, 8);font-weight:bold">T.O.S.'s Terms.</strong> You also acknowledge our Cookie and Privacy policies. You will receive marketing messages from T. O. S. and may opt out at any time by following the unsubscribe link in our messages, or as detailed in our terms.</p>
+        <button class="google-container">
+            <a href="#">
+                <img class="google-logo" src="/static/assets/google icon.jpg" width="30px" alt="Error">
                 <p class="btn-google">Continue with Google</p>
-                </a>
-            </button>
-            <button class="apple-container">
-                <a href="#">
-                <img class="apple-logo" src="images/apple.png" width="65px" alt="Error">
+            </a>
+        </button>
+        <button class="apple-container">
+            <a href="#">
+                <img class="apple-logo" src="/static/assets/apple icon.png" width="65px" alt="Error">
                 <p class="btn-apple">Continue with Apple</p>
+            </a>
+        </button>
+        <div class="line-br">or</div>
+
+        <!-- Login Form -->
+        <form id="login-form" action="/" method="post">
+            <div class="field-wrap">
+                <label for="email">
+                    Email Address<span class="req">*</span>
+                </label>
+                <input type="email" id="email" name="email" required autocomplete="off"/>
+            </div>
+            <div class="field-wrap">
+                <label for="password">
+                    Password<span class="req">*</span>
+                </label>
+                <input type="password" id="password" name="password" required autocomplete="off"/>
+            </div>
+
+
+
+            <ul class="tab-group">
+                <a href="/static/login.ejs">
+                    <button class="button button-block" type="button">Log In</button>
                 </a>
-            </button>
-            <div class="line-br">or</div>
-            <div class="txt-email-add">Email address</div>
-            <div class="email-input">
-            <input class="email-add-cont" type="email">
-            </div>
-            <div class="continue-container">
-            <a class="btn-continue" href="">Continue</a>
-            </div>
-        </div>
+            </ul>
+
+            <a href="#" class="forgot" onclick="showConfirmationDialog()">Forgot Password?</a>
+
+        </form>
+        <!-- End Login Form -->
+
+        <!-- Sign Up Area -->
+        <ul class="tab-group">
+            <a href="/static/signup.ejs">
+                <button class="button button-block" type="button">Sign Up</button>
+            </a>
+        </ul>
+        <!-- End Sign Up Area -->
+    </div>
+    </div><!-- tab-content -->
+
+    <script>
+        // Wait for the page to be fully loaded
+        $(document).on("pagecreate", function () {
+            // Handle the login button click
+            $("#forgotPassword-button").on("click", function () {
+                // Your login logic here
+                alert("forgotPassword button clicked!");
+            });
+        });
+
+        function showConfirmationDialog() {
+            const confirmed = confirm('Do you want to continue?');
+
+            if (confirmed) {
+                // User clicked "OK" (Yes)
+                alert('T.O.S Ready to Serve!');
+            } else {
+                // User clicked "Cancel" (No)
+                alert('You canceled the action.');
+            }
+        }
+    </script>
 </body>
 </html>

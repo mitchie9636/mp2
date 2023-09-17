@@ -19,6 +19,7 @@
     "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
     "session": "^0.1.0",
+    "supertest": "^6.3.3",
     "test": "^3.3.0",
     "uuid": "^9.0.0",
     "validator": "^13.11.0"
