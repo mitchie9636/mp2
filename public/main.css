@@ -50,22 +50,22 @@ nav {
 
 .search-container {
     float: left;
-    width: 500px;
-    height: 60px;
+    width: 400px;
+    height: 45px;
     border: 1px solid gold;
-    margin-left: 80px;
-    margin-top: 250px;
+    margin-left: 230px;
+    margin-top: 150px;
     border-radius: 10px;
 }
 
 .location-container {
     float: right;
-    width: 500px;
-    height: 60px;
+    width: 400px;
+    height: 45px;
     border: 1px solid gold;
-    margin-top: 250px;
+    margin-top: 150px;
     border-radius: 10px;
-    margin-right: 500px;
+    margin-right: 290px;
 }
 
 .find-button{
@@ -86,7 +86,7 @@ nav {
 }
 
 .text {
-    float: left; 
+    float: left;
     margin-left: 500px;
     margin-top: 50px;
     font-family: sans-serif;
