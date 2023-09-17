@@ -1,63 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title ? locals.title : 'T.O.S Main Page' %></title>
-    <link rel="icon" href="/static/assets/logo.png">
-    <link rel="stylesheet" href="/static/main.css">
-</head>
-<body>
-    <nav>
-        <div class="brand-container">
-            <h1 class="brand">T. O. S.</h1>
-            <a href="index.html"><img class="brand-title" src="/static/assets/tos logo.png" width="80px" alt="Error"></a>
-        </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= locals.title ? locals.title : 'T.O.S Main Page' %></title>
+        <link rel="icon" href="/static/assets/logo.png">
+        <link rel="stylesheet" href="/static/main.css">
+    </head>
+    <body>
+        <nav>
+            <div class="brand-container">
+                <h1 class="brand">T. O. S.</h1>
+                <a href="index.html"><img class="brand-title" src="/static/assets/tos logo.png" width="80px" alt="Error"></a>
+            </div>
 
-        <div class="links-container">
-            <a class="links" href="findjobs.html">Find Jobs</a>
-            <a class="links" href="companyreviews.html">Company Reviews</a>
-            <a class="links" href="findsalaries.html">Find Salaries</a>
-        </div>
+            <div class="links-container">
+                <a class="links" href="/static/findjobs.js">Find Jobs</a>
+                <a class="links" href="companyreviews.html">Company Reviews</a>
+                <a class="links" href="findsalaries.html">Find Salaries</a>
+            </div>
 
-        <div class="signup-container">
-            <a class="links" href="/login">Log In/Sign In</a>
-            <a class="links" href="employers.html">Employers/Job Post</a>
-        </div>
-    </nav>
+            <div class="signup-container">
+                <a class="links" href="/login">Log In/Sign In</a>
+                <a class="links" href="employers.html">Employers/Job Post</a>
+            </div>
+        </nav>
 
-    <main>
-        <div class="jobsearch-container">
-        <input class="search-container" type="text" placeholder="Jobtitle, keywords, or company">
-        </div>
-        <div class="locationsearch-container">
-        <input class="location-container" type="text" placeholder="City, province or POEA">
-        </div>
-       
-        <div class="text">
-            <a class="post-link" href="login"> Post your resume</a> - It only takes a few seconds
-        </div>
-        <div>
-            <button id="find-jobs-button" class="find-button">Find Jobs</button>
-        </div>
-    </main>
+        <main>
+            <div class="jobsearch-container">
+            <input class="search-container" type="text" placeholder="Jobtitle, keywords, or company">
+            </div>
+            <div class="locationsearch-container">
+            <input class="location-container" type="text" placeholder="City, province or POEA">
+            </div>
+        
+            <div class="text">
+                <a class="post-link" href="login"> Post your resume</a> - It only takes a few seconds
+            </div>
+            <div>
+                <button id="find-jobs-button" class="find-button">Find Jobs</button>
+            </div>
+        </main>
 
-    <!-- Your custom JavaScript code goes here -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        const findJobsButton = document.querySelector('.find-button');
-    
-        findJobsButton.addEventListener('click', function() {
-            // Display an alert when the button is clicked
-            alert('You clicked the "Find Jobs" button!');
-        });
-    </script>
-    
-  <script src="/static/main.js"></script>
+        <!-- custom JavaScript code goes here -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/static/findjobs.js"></script>
+        <script>
 
-
-    
-</body>
-</html>
+            const findJobsButton = document.querySelector('#find-jobs-button');
+        
+            // a click event listener to the "Find Jobs" button
+            findJobsButton.addEventListener('click', function() {
+                // Display an alert when the button is clicked
+                alert('You clicked the "Find Jobs" button!');
+            });
+        </script>
+        
+        
+    </body>
+    </html>
 
 

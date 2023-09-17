@@ -11,14 +11,20 @@ router.get('/main', (req, res)=>{
     res.render('main',{title:'main Page'});
 });
 
+router.get('/findjobs', (req, res)=>{
+    res.render('findjobs',{title:'findjobs Page'});
+});
+
+
 router.get('/login', (req, res)=>{
     res.render('login',{title:'Login Page'});
 });
 
-// const credential = {
-//     email: 'TOS@test.com',
-//     password: 'tRio1234'
-// };
+
+const credential = {
+    email: 'TOS@test.com',
+    password: 'tRio1234'
+};
 
 router.get('/signup', (req, res)=>{
     res.render('signup',{title:'Signup Page'});
