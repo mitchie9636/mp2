@@ -7,10 +7,7 @@
     <link rel="icon" href="/static/assets/logo.png">
     <link rel="stylesheet" href="/static/login/login.css">
 
-    <!-- Add jQuery and jQuery Mobile -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   
 </head>
 <body>
     <div class="agencytitle-container">
@@ -70,15 +67,28 @@
         </ul>
         <!-- End Sign Up Area -->
     </div>
-    </div><!-- tab-content -->
 
-    <script>
-        // Wait for the page to be fully loaded
+     <!-- Add jQuery and jQuery Mobile -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+     <script>
         $(document).on("pagecreate", function () {
-            // Handle the login button click
-            $("#forgotPassword-button").on("click", function () {
-                // Your login logic here
-                alert("forgotPassword button clicked!");
+            $("#login-button").on("click", function (event) {
+                event.preventDefault(); // Prevent the form from submitting
+                const email = $("#email").val();
+                const password = $("#password").val();
+
+                if (email && password) {
+                    // Fields are filled, proceed with login logic
+                    alert("Login successful!");
+                    // You can also submit the form here if needed
+                    // $("#login-form").submit();
+                } else {
+                    // Fields are not filled, show an error message
+                    alert("Please fill out all required fields.");
+                }
             });
         });
 
