@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= locals.title ? locals.title : 'T.O.S Main Page' %></title>
-        <link rel="icon" href="/static/assets/logo.png">
+        <title><%= locals.title ? locals.title : 'T.O.S.' %></title>
+        <link rel="icon" type="image/x-icon" href="/static/assets/logo.png">
         <link rel="stylesheet" href="/static/main.css">
     </head>
     <body>
@@ -15,7 +15,7 @@
             </div>
 
             <div class="links-container">
-                <a class="links" href="/static/findjobs.js">Find Jobs</a>
+                <a class="links" href="/findjobs.js">Find Jobs</a>
                 <a class="links" href="companyreviews.html">Company Reviews</a>
                 <a class="links" href="findsalaries.html">Find Salaries</a>
             </div>
@@ -44,17 +44,8 @@
 
         <!-- custom JavaScript code goes here -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="/static/findjobs.js"></script>
-        <script>
-
-            const findJobsButton = document.querySelector('#find-jobs-button');
-        
-            // a click event listener to the "Find Jobs" button
-            findJobsButton.addEventListener('click', function() {
-                // Display an alert when the button is clicked
-                alert('You clicked the "Find Jobs" button!');
-            });
-        </script>
+    
+      
         
         
     </body>
