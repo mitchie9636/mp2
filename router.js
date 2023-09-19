@@ -1,79 +1,66 @@
-// //import needed packages
+// Import needed packages
 const express = require('express');
-const {check, validationResult} = require('express-validator');
+const { check, validationResult } = require('express-validator');
 
-//create a server
+// Create a server
 const router = express.Router();
 
-
-
-                  //---login routes------------
-router.get('/login', (req, res)=>{
-    res.render('login',{title:'Login Page'});
+//  login route
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'Login Page' });
 });
 
-const credential = {                                        
-    email: 'TOS@test.com',
-    password: 'Trio1234'
+const credential = {
+  email: 'Tos@test.com',
+  password: 'Tos12345',
 };
 
-//route to authenticate a user
 router.post('/login', [
-    check('email')
+  check('email')
     .notEmpty()
-    .withMessage('email is required.'),
+    .withMessage('Email is required.'),
 
-    check('password')
+  check('password')
     .notEmpty()
-    .withMessage('password is required.')
-    .isLength({min:8})
-    .withMessage('password must be at least 8 characters.')
-],(req, res)=>{
+    .withMessage('Password is required.')
+    .isLength({ min: 8 })
+    .withMessage('Password must be at least 8 characters.'),
+], (req, res) => {
+  const errors = validationResult(req);
 
-    const errors = validationResult(req);
-
-    if(!errors.isEmpty()){
-        console.log(errors);
-        // res.send({ errors: errors.array() });
-        res.render('login',{title:'Login Page', errors: 'Please check your input' });
-    }else{
-        if(req.body.email == credential.email && req.body.password == credential.password){
-            //create a session
-            req.session.user = req.body.email;
-            res.redirect('/dashboard');
-        }else{
-            res.render('login',{title:'Login Page', isInvalid: 'Your credential does not exist' });
-        }
+  if (!errors.isEmpty()) {
+    console.log(errors.array());
+    res.render('login', { title: 'Login Page', errors: errors.array() });
+  } else {
+    if (req.body.email === credential.email && req.body.password === credential.password) {
+      // Set up a session
+      req.session.user = req.body.email;
+      res.redirect('/dashboard');
+    } else {
+      res.render('login', { title: 'Login Page', isInvalid: 'Your credentials do not exist' });
     }
-
-    if(!req.body.email || !req.body.password){
-        res.send('email or password is required');
-    }else{
-       
-      
-    }
+  }
 });
 
-//route to the dashboard
-router.get('/dashboard',(req, res)=>{
-    if(req.session.user){
-        res.render('dashboard',{title:'Dashboard', user: req.session.user });
-    }else{
-        res.send(403);
+// Define your dashboard route
+router.get('/dashboard', (req, res) => {
+  if (req.session && req.session.user) {
+    res.render('dashboard', { title: 'Dashboard', user: req.session.user });
+  } else {
+    res.sendStatus(403);
+  }
+});
+
+// Define your logout route
+router.post('/logout', (req, res) => {
+  req.session.destroy(function (err) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.render('login', { title: 'Login Page', logout: 'Logout successfully!' });
     }
+  });
 });
-
-//route to destroy the session
-router.get('/logout', (req, res)=>{
-    req.session.destroy(function(err){
-        if(err){
-            console.log(err);
-            res.send(err);
-        }else{
-            res.render('login', {title:'Login Page', logout:'Logout successfully!'});
-        }
-    })
-});
-
 
 module.exports = router;
