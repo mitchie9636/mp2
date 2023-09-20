@@ -8,54 +8,99 @@
     <link rel="stylesheet" href="/static/login/login.css">
 </head>
 <body>
- 
-<!-- sign up area -->
-
-<div class="tab-content">
-    <div id="signup">   
-      <h1>Sign Up for Free</h1>
-      
-      <form action="/" method="post">
-      
-      <div class="top-row">
-        <div class="field-wrap">
-          <label>
-            First Name<span class="req">*</span>
-          </label>
-          <input type="text" required autocomplete="off" />
-        </div>
-    
-        <div class="field-wrap">
-          <label>
-            Last Name<span class="req">*</span>
-          </label>
-          <input type="text"required autocomplete="off"/>
-        </div>
-      </div>
-
-      <div class="field-wrap">
-        <label>
-          Email Address<span class="req">*</span>
-        </label>
-        <input type="email"required autocomplete="off"/>
-      </div>
-      
-      <div class="field-wrap">
-        <label>
-          Set A Password<span class="req">*</span>
-        </label>
-        <input type="password"required autocomplete="off"/>
-      </div>
-      
-      <button type="submit" class="button button-block"/>Get Started</button>
-      
-      </form>
-
+    <!-- Header Section -->
+    <div class="agencytitle-container">
+        <h2 class="agency-title">Trio Outsourcing Services</h2>
     </div>
-    
 
-          
-<!--end of sign up area -->
+    <!-- Signup Container -->
+    <div class="login-container">
+        <h2 class="login-header">Create an Account</h2>
+        <p class="login-text">Sign up for a new account.</p>
 
+        <!-- Signup Form -->
+        <form id="signup-form" action="/signup" method="post">
+            <!-- Email Input -->
+            <div class="field-wrap">
+                <label for="email">
+                    Email Address<span class="req">*</span>
+                </label>
+                <div class="form-group">
+                    <input type="email" placeholder="email" class="form-control" value="" name="email">
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="field-wrap">
+                <label for="password">
+                    Password<span class="req">*</span>
+                </label>
+                <div class="form-group password-input">
+                    <input type="password" placeholder="password" class="form-control" value="" name="password" id="password-input">
+                    <!-- Add an eye icon to show/hide the password -->
+                    <div class="password-toggle" id="show-password-button">
+                        <span class="eye-icon">👁️</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div class="field-wrap">
+                <label for="confirm-password">
+                    Confirm Password<span class="req">*</span>
+                </label>
+                <div class="form-group password-input">
+                    <input type="password" placeholder="confirm password" class="form-control" value="" name="confirm-password" id="confirm-password-input">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field-wrap">
+                <button type="submit" class="btn btn-success rounded-pill">Sign Up</button>
+            </div>
+        </form>
+        <!-- End Signup Form -->
+        
+        <!-- Already have an account? Login Link -->
+        <div class="signup-link">
+            Already have an account? <a href="/login">Log in</a>
+        </div>
+
+        <!-- Error Messages -->
+        <% if (locals.errors) { %>
+            <div class="alert alert-danger text-center">
+                <%= locals.errors %>
+            </div>
+        <% } %>
+        <% if (locals.isInvalid) { %>
+            <div class="alert alert-danger text-center">
+                <%= locals.isInvalid %>
+            </div>
+        <% } %>
+        <% if (locals.logout) { %>
+            <div class="alert alert-success text-center">
+                <%= locals.logout %>
+            </div>
+        <% } %>
+    </div>
+
+    <!-- JavaScript to show/hide password -->
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const confirmPasswordInput = document.getElementById('confirm-password-input');
+        const showPasswordButton = document.getElementById('show-password-button');
+
+        showPasswordButton.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                confirmPasswordInput.type = 'text';
+                showPasswordButton.querySelector('.eye-icon').textContent = '🔒';
+            } else {
+                passwordInput.type = 'password';
+                confirmPasswordInput.type = 'password';
+                showPasswordButton.querySelector('.eye-icon').textContent = '👁️';
+            }
+        });
+    </script>
 </body>
 </html>

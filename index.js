@@ -27,8 +27,22 @@ app.use(session({
     secret: 'Tos12345', // tos secret key
     resave: false,
     saveUninitialized: true,
-    // Additional configuration options if needed
+
   }));
+
+  // Define a route to serve your HTML page --------------------------------
+// Define a route for the root URL that serves your login page
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/login.ejs');
+});
+
+// Define a route for the sign-up page
+app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + '/signup.ejs');
+});
+
+
+
 //set the routes -----------------------------------   
 app.use('/', router)
 

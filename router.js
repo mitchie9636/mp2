@@ -5,6 +5,8 @@ const { check, validationResult } = require('express-validator');
 // Create a server
 const router = express.Router();
 
+
+
 //  login route
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Login Page' });
@@ -51,7 +53,7 @@ router.get('/dashboard', (req, res) => {
   }
 });
 
-// Define your logout route
+// Post logout route
 router.post('/logout', (req, res) => {
   req.session.destroy(function (err) {
     if (err) {
@@ -62,5 +64,7 @@ router.post('/logout', (req, res) => {
     }
   });
 });
+
+
 
 module.exports = router;

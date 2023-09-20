@@ -8,50 +8,95 @@
     <link rel="stylesheet" href="/static/login/login.css">
 </head>
 <body>
+    <!-- Header Section -->
     <div class="agencytitle-container">
         <h2 class="agency-title">Trio Outsourcing Services</h2>
     </div>
+
+    <!-- Login Container -->
     <div class="login-container">
         <h2 class="login-header">Ready to take the next step?</h2>
         <p class="login-text">Create an account or sign in.</p>
-        <p class="termsandconditions">By creating an account or logging in, you understand and agree to <strong style="color:rgb(200, 194, 8);font-weight:bold">T.O.S.'s Terms.</strong> You also acknowledge our Cookie and Privacy policies. You will receive marketing messages from T. O. S. and may opt out at any time by following the unsubscribe link in our messages, or as detailed in our terms.</p>
+
+        <!-- Terms and Conditions -->
+        <p class="termsandconditions">
+            By creating an account or logging in, you understand and agree to
+            <strong style="color:rgb(200, 194, 8);font-weight:bold">T.O.S.'s Terms.</strong>
+            You also acknowledge our Cookie and Privacy policies. You will receive marketing messages
+            from T.O.S. and may opt out at any time by following the unsubscribe link in our messages,
+            or as detailed in our terms.
+        </p>
+
+        <!-- Continue with Google Button -->
         <button class="google-container">
             <a href="#">
                 <img class="google-logo" src="/static/assets/google icon.jpg" width="30px" alt="Error">
                 <p class="btn-google">Continue with Google</p>
             </a>
         </button>
+
+        <!-- Continue with Apple Button -->
         <button class="apple-container">
             <a href="#">
                 <img class="apple-logo" src="/static/assets/apple icon.png" width="65px" alt="Error">
                 <p class="btn-apple">Continue with Apple</p>
             </a>
         </button>
+
+        <!-- Divider Line -->
         <div class="line-br">or</div>
 
         <!-- Login Form -->
         <form id="login-form" action="/login" method="post">
+            <!-- Email Input -->
             <div class="field-wrap">
                 <label for="email">
                     Email Address<span class="req">*</span>
                 </label>
                 <div class="form-group">
-                    <input type="email" placeholder="email" class="form-control" value="Tos@test.com" name="email">
+                    <input type="email" placeholder="email" class="form-control" value="" name="email">
                 </div>
             </div>
+
+            <!-- Password Input -->
             <div class="field-wrap">
                 <label for="password">
                     Password<span class="req">*</span>
                 </label>
-                <div class="form-group">
-                    <input type="password" placeholder="password" class="form-control" value="Tos12345" name="password">
+                <div class="form-group password-input">
+                    <input type="password" placeholder="password" class="form-control" value="" name="password" id="password-input">
+                    <!-- Add an eye icon to show/hide the password -->
+                    <div class="password-toggle" id="show-password-button">
+                        <span class="eye-icon">👁️</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- Remember Me Checkbox -->
+            <div class="field-wrap">
+                <label for="remember">
+                    <input type="checkbox" id="remember" name="remember"> Remember Me
+                </label>
+            </div>
+
+            <!-- Forgot Password Link -->
+            <div class="field-wrap">
+                <a href="/forgot-password">Forgot Password?</a>
+            </div>
+            
+            <!-- Submit Button -->
             <div class="field-wrap">
                 <button type="submit" class="btn btn-success rounded-pill">Continue</button>
             </div>
         </form>
         <!-- End Login Form -->
+        
+        <!-- Don't have an account? Sign up now Link -->
+        <div class="signup-link">
+            Don't have an account? <a href="/static/signup.ejs">Sign up now</a>
+        </div>
+
+        <!-- Error Messages -->
         <% if (locals.errors) { %>
             <div class="alert alert-danger text-center">
                 <%= locals.errors %>
@@ -69,6 +114,20 @@
         <% } %>
     </div>
 
-    <script src="/static/login/login.js"></script>
+    <!-- JavaScript to show/hide password -->
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const showPasswordButton = document.getElementById('show-password-button');
+
+        showPasswordButton.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showPasswordButton.querySelector('.eye-icon').textContent = '🔒';
+            } else {
+                passwordInput.type = 'password';
+                showPasswordButton.querySelector('.eye-icon').textContent = '👁️';
+            }
+        });
+    </script>
 </body>
 </html>
