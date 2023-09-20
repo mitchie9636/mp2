@@ -1,46 +1,42 @@
 body {
-    background-image: url("/static/assets/mainPage2.avif");
+    background-image: url("/static/assets/back.jpg");
+    height: 100vh; 
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-
-  }
-
-.brand {
-    float: left;
-    margin-left: 40px;
-    margin-top: 15px;
-    font-family: sans-serif;
-    color: gold;
-    font-weight: 900;
-    font-size: 40px;
-}
-nav {
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(134, 127, 9, 0.585);
-}
-.brand-title {
-    display: inline-block;
-}
-
-.links-container {
-    float: left;
-    margin-left: 160px;
-    margin-top: -50px;
-}
-
-.signup-container {
-    float: right;
-    margin-right: 20px;
-    margin-top: -50px;
-}
-
-.links {
+   }
+   /* Add responsive styles here */
+   body {
+     font-family: Arial, sans-serif;
+     background-color: #f0f0f0; /* Background color for the entire page */
+  
+ }
+ 
+ nav {
+     background: rgba(14, 13, 13, 0.5);
+     border-bottom: 1px solid rgba(134, 127, 9, 0.585);
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 20px;
+ }
+ 
+ .brand-container {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .brand-title {
+     width: 80px; /* Adjust the size of the logo */
+     margin-right: 10px;
+ }
+ 
+ .links {
     text-decoration: none;
     color: rgb(172, 164, 8);
     font-family: sans-serif;
     font-size: 20px;
-    font-weight: 900;
     margin-left: 60px;
 }
 
@@ -48,76 +44,69 @@ nav {
     border-bottom: 1px solid gold;
 }
 
-.search-container {
-    float: left;
-    width: 400px;
-    height: 45px;
-    border: 1px solid gold;
-    margin-left: 230px;
-    margin-top: 150px;
-    border-radius: 10px;
-}
 
-.location-container {
-    float: right;
-    width: 400px;
-    height: 45px;
-    border: 1px solid gold;
-    margin-top: 150px;
-    border-radius: 10px;
-    margin-right: 290px;
-}
+ 
+ /* Slideshow container */
 
-.find-button{
-    float: right;
-    height: 60px;
-    margin-top: -60px;
-    border-radius: 10px;
-    margin-right: 380px;
-    padding: 10px;
-    background: gold;
-    border: 1px solid gold;
-    color: rgb(9, 9, 9);
-    font-weight: bolder;
-}
-
-.find-button:hover {
-    background: rgba(255, 217, 0, 0.658);
-}
-
-.text {
-    float: left;
-    margin-left: 500px;
-    margin-top: 50px;
-    font-family: sans-serif;
-    font-size:x-large;
-}
-
-.post-link {
-    text-decoration: none;
-    color: gold;
-    font-weight: bold;
-}
-
-.post-link:hover {
-    color: rgba(255, 217, 0, 0.479);
-}
-
-/* Adjust styles for smaller screens
-@media (max-width: 768px) {
-    .jobsearch-container {
-        width: 80%;
-    }
-
-    .locationsearch-container {
-        width: 80%;
-    }
-}
-
-/* Mobile styles */
-/* @media (max-width: 480px) {
-    .jobsearch-container,
-    .locationsearch-container {
-        width: 100%;
-    }
-} */ */
+ /* Slides */
+ .mySlides {
+   display: none;
+   padding: 80px;
+   color: #0a0a0a;
+   font-weight: bold;
+   text-align: center;
+ }
+ 
+ /* Next & previous buttons */
+ .prev, .next {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   width: auto;
+   margin-top: -30px;
+   padding: 16px;
+   color: #888;
+   font-weight: bold;
+   font-size: 20px;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+ }
+ 
+ /* Position the "next button" to the right */
+ .next {
+   position: absolute;
+   right: 0;
+   border-radius: 3px 0 0 3px;
+ }
+ 
+ 
+ /* The dot/bullet/indicator container */
+ .dot-container {
+     text-align: center;
+     padding: 20px;
+ 
+ }
+ 
+ /* The dots/bullets/indicators */
+ .dot {
+   cursor: pointer;
+   height: 15px;
+   width: 15px;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.6s ease;
+ }
+ 
+ /* Add a background color to the active dot/circle */
+ .active, .dot:hover {
+   background-color: #717171;
+ }
+ 
+ /* Add an italic font style to all quotes */
+ q {font-style: italic;}
+ 
+ /* Add a blue color to the author */
+ .author {color: cornflowerblue;}
+ 

@@ -3,70 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title ? locals.title : 'Job Search' %></title>
-    <!-- Link to an external stylesheet -->
-    <link rel="stylesheet" href="/static/styles.css">
+    <title><%= locals.title ? locals.title : 'T.O.S.' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/logo.png">
+    <link rel="stylesheet" href="/static/dashboard.css">
+   
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/dashboard">
-              <img src="static/assets/favicon.ico" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            <%= process.env.APP?process.env.APP:'Chat App'  %>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
-              </li>
-             
-             
-            </ul>
-            <div class="d-flex" role="search">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <%= locals.user?user:'No email found'  %>
-                </a>
+    <nav>
+        <div class="brand-container">
+            <a href="index.html"><img class="brand-title" src="/static/assets/tos logo.png" width="80px" alt="Error"></a>
+            <i class="baseline-class">Trio Outsourcing Services</i>
+        </div>
+
+        <div class="links-container">
+            <a class="links" href="/findjobs.js">Find Jobs</a>
+            <a class="links" href="companyreviews.html">Company Reviews</a>
+            <a class="links" href="findsalaries.html">Find Salaries</a>
+        </div>
+
+        <div class="profile-dropdown">
+            <!-- Replace 'User's Email' with the actual email address -->
+            <a class="links" href="#">My Profile <span class="arrow-down">&#9660;</span></a>
+
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= locals.user?user:'No email found'  %>
+                  </a>
+                  <ul class="dropdown-menu">
+                <div class="dropdown-content">
+                <a href="#">My Jobs</a>
+                <a href="#">My Reviews</a>
+                <a href="#">Settings</a>
+                <a href="#">Help Center</a>
+                <li><hr class="dropdown-divider"></li>
+                <a href="#">Footer</a>
+                <li><hr class="dropdown-divider"></li>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="<%= locals.user?user:'No email found'  %>"><%= locals.user?user:'No email found'  %></a></li>
-                  <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
-                  <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="/logout">
                     <form action="/logout" method="POST">
                       <button class="btn btn-danger">Logout</button>
                     </form>
-                  </a></li>
-                </ul>
-              </li>
-             
-            </ul>
             </div>
-          </div>
         </div>
-      </nav>
-      <div class="mt-5 container">
-        <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+    </nav>
+
+    <main>
+      <main>
+        <div class="jobsearch-container">
+        <input class="search-container" type="text" placeholder="Jobtitle, keywords, or company">
+        </div>
+        <div class="locationsearch-container">
+        <input class="location-container" type="text" placeholder="City, province or POEA">
+        </div>
+    
+        <div class="text">
+            <a class="post-link" href="login"> Post your resume</a> - It only takes a few seconds
+        </div>
+        <div>
+            <button id="find-jobs-button" class="find-button">Find Jobs</button>
+        </div>
+    </main><!-- Your main content goes here -->
+    </main>
+
+    <!-- custom JavaScript code goes here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JavaScript to handle dropdown functionality -->
+    <script>
+        $(document).ready(function(){
+            // Toggle the dropdown menu on button click
+            $(".profile-dropdown button").click(function(){
+                $(".dropdown-content").toggle();
+            });
+
+            // Close the dropdown menu when clicking outside of it
+            $(window).click(function(event){
+                if (!event.target.matches('.profile-dropdown button')) {
+                    var dropdowns = $(".dropdown-content");
+                    dropdowns.each(function() {
+                        $(this).hide();
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
