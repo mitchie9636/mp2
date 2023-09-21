@@ -9,14 +9,21 @@ body {
 
 .agencytitle-container {
   float: right;
-  margin-right: 720px;
-  margin-top: 10px;
-  font-family: sans-serif;
-  color: gold;
-  font-size: 15px;
-  font-family: "Times New Roman", Times, serif;
-  
+    margin-right: 500px;
+    margin-top: 40px;
+    font-family: sans-serif;
+    color: gold;
+    text-decoration: none;
+}
 
+.linktomain {
+  font-family: sans-serif;
+    color: gold;
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: -120px;
+    display: inline-block;
+    font-weight: bold;
 }
 
 .login-container {
@@ -24,12 +31,15 @@ body {
   width: 450px;
   height: 760px;
   float: right;
-  margin-top: 100px;
-  margin-right: -460px;
+  margin-top: 50px;
+  margin-right: 400px;
   border-radius: 10px;
   background-color: rgba(175, 164, 164, 0.613);
   box-shadow: 1px 2px 28px -7px rgba(0, 0, 0, 0.992);
-  
+}
+
+.linktomain:hover {
+  text-decoration: underline;
 }
 
 .login-header {
@@ -46,54 +56,49 @@ body {
 
 .termsandconditions {
   font-family: Helvetica;
-  font-size: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  color: rgba(0, 0, 0, 0.841);
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: rgba(0, 0, 0, 0.534);
 }
 
 .google-container {
   margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 300px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.295);
-  border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 400px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 10px;
 }
 
 .apple-container {
-  margin-top: 10px;
   margin-left: 20px;
-  margin-right: 20px;
-  width: 300px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.295);
-  border-radius: 10px;
-  margin-top: 15px;
+    margin-right: 20px;
+    width: 400px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 .google-logo {
-  display: inline-block;
-    font-size: larger;
-    font-weight: bold;
-    margin-top: -10%;
-    margin-left: -40px;
+  float: left;
+    margin-top: 7px;
+    margin-left: 10px;
 }
 
 .btn-google {
   display: inline-block;
-  font-size:medium;
-  font-weight: bold;
-  margin-top: 1%;
-  margin-left: 50px;
+    font-size: larger;
+    font-weight: bold;
+    margin-left: -40px;
 }
 .btn-apple {
   display: inline-block;
-  font-size:medium;
-  font-weight: bold;
-  margin-top: 1%;
-  margin-left: 50px;
+    font-size: larger;
+    font-weight: bold;
+    margin-left: -50px;
 }
 
 
@@ -105,10 +110,8 @@ body {
 
 .apple-logo {
   float: left;
-  font-size: medium;
-  font-weight: bold;
-  margin-top: -10%;
-  margin-left: -40px;
+    margin-top: 3px;
+    margin-left: -10px;
 }
 
 .apple-container:hover {
@@ -131,7 +134,8 @@ body {
 }
 
 .field-wrap label {
-  display: block;
+  font-family: sans-serif;
+  font-weight: bold;
   color: #0b0b0b;
   margin-bottom: 5px;
   margin-left: 5%;
@@ -155,6 +159,7 @@ body {
   background: rgba(255, 217, 0, 0.171);
   transition: 1.5s;
 }
+
 
 
 /* Style the "Log In" and "Sign Up" buttons */
@@ -193,3 +198,50 @@ a.forgot:hover {
   color: #070600; 
 }
 
+.eye-icon {
+  float: right;
+  margin-right: 50px;
+  margin-top: -35px;
+}
+
+.forgot-pass{
+  float: right;
+  text-decoration: none;
+  color: gold;
+  margin-right: 40px;
+  margin-top: -40px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.forgot-pass:hover {
+  text-decoration: underline;
+}
+
+.signup-link{
+  float: left;
+  margin-top: -70px;
+  margin-left: 25px;
+  font-family: sans-serif;
+}
+
+.btn-success{
+  height: 40px;
+  margin-top: 100px;
+  width: 90%;
+  margin-left: 20px;
+  font-size: 20px;
+  border-radius: 50px;
+}
+
+.btn-success:hover {
+  color: white;
+  background: gold;
+  border: 1px solid gold;
+  transition: 1s;
+  font-weight: bold;
+}
+
+.sign-up {
+  text-decoration: none;
+}
