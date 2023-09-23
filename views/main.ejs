@@ -3,22 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- locals.title?title:'TOS-Job Posting and Management' -%></title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title><%= locals.title ? locals.title : 'T.O.S.' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/logo.png">
+    <link rel="stylesheet" href="/static/main.css">
+
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-        </ul>
+        <div class="brand-container">
+            <a href="index.html"><img class="brand-title" src="/static/assets/tos logo.png" alt="Error"></a>
+            <i class="baseline-class">Trio Outsourcing Services</i>
+        </div>
+        <div class="signup-container">
+            <a class="links" href="/login">Log In/Sign In</a>
+            <a class="links" href="employers.html">Employers/Job Post</a>
+        </div>
     </nav>
-    <header>
-        <h1>Trio Outsourcing Services</h1>
-    </header>
+
     <main>
-        <!-- Job search form and results go here -->
+        <div class="login-container">
+            <h2 class="ready">Ready to take the next step?</h2>
+            <p class="login-text">Motivate with our Job Search Quotes</p>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides">
+                  <q>I never dreamed about success. I worked for it.</q>
+                  <p class="author">— Estee Lauder</p>
+                </div>
+                
+                <div class="mySlides">
+                  <q>The crowning fortune of a man is to be born to some pursuit which finds him employment and happiness, whether it be to make baskets, or broadswords, or canals, or statues, or songs..</q>
+                  <p class="author">—Ralph Waldo Emerson</p>
+                </div>
+                
+                <div class="mySlides">
+                  <q>Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.</q>
+                  <p class="author">—Norman Vincent Peale</p>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                
+                </div>
+                
+                <div class="dot-container">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
     </main>
+
+    <!-- custom JavaScript code goes here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/main.js"></script>
 </body>
 </html>

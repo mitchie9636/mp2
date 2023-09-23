@@ -3,20 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- locals.title?title:'signup' -%></title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title><%= locals.title ? locals.title : 'Sign Up Page' %></title>
+    <link rel="icon" href="/static/assets/logo.png">
+    <link rel="stylesheet" href="/static/login/login.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h1>Signup</h1>
-        <!-- Signup form goes here -->
-    </main>
+    <!-- Header Section -->
+    <div class="agencytitle-container">
+        <h2 class="agency-title">Trio Outsourcing Services</h2>
+    </div>
+
+    <!-- Signup Container -->
+    <div class="login-container">
+        <h2 class="login-header">Create an Account</h2>
+        <p class="login-text">Sign up for a new account.</p>
+
+        <!-- Signup Form -->
+        <form id="signup-form" action="/signup" method="post">
+            <!-- Email Input -->
+            <div class="field-wrap">
+                <label for="email">
+                    Email Address<span class="req">*</span>
+                </label>
+                <div class="form-group">
+                    <input type="email" placeholder="email" class="form-control" value="" name="email">
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="field-wrap">
+                <label for="password">
+                    Password<span class="req">*</span>
+                </label>
+                <div class="form-group password-input">
+                    <input type="password" placeholder="password" class="form-control" value="" name="password" id="password-input">
+                    <!-- Add an eye icon to show/hide the password -->
+                    <div class="password-toggle" id="show-password-button">
+                        <span class="eye-icon">👁️</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div class="field-wrap">
+                <label for="confirm-password">
+                    Confirm Password<span class="req">*</span>
+                </label>
+                <div class="form-group password-input">
+                    <input type="password" placeholder="confirm password" class="form-control" value="" name="confirm-password" id="confirm-password-input">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field-wrap">
+                <button type="submit" class="btn btn-success rounded-pill">Sign Up</button>
+            </div>
+        </form>
+        <!-- End Signup Form -->
+        
+        <!-- Already have an account? Login Link -->
+        <div class="signup-link">
+            Already have an account? <a href="/login">Log in</a>
+        </div>
+
+        <!-- Error Messages -->
+        <% if (locals.errors) { %>
+            <div class="alert alert-danger text-center">
+                <%= locals.errors %>
+            </div>
+        <% } %>
+        <% if (locals.isInvalid) { %>
+            <div class="alert alert-danger text-center">
+                <%= locals.isInvalid %>
+            </div>
+        <% } %>
+        <% if (locals.logout) { %>
+            <div class="alert alert-success text-center">
+                <%= locals.logout %>
+            </div>
+        <% } %>
+    </div>
+
+    <!-- JavaScript to show/hide password -->
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const confirmPasswordInput = document.getElementById('confirm-password-input');
+        const showPasswordButton = document.getElementById('show-password-button');
+
+        showPasswordButton.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                confirmPasswordInput.type = 'text';
+                showPasswordButton.querySelector('.eye-icon').textContent = '🔒';
+            } else {
+                passwordInput.type = 'password';
+                confirmPasswordInput.type = 'password';
+                showPasswordButton.querySelector('.eye-icon').textContent = '👁️';
+            }
+        });
+    </script>
 </body>
 </html>

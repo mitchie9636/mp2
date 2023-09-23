@@ -1,33 +1,26 @@
-// script.js
+var slideIndex = 1;
+showSlides(slideIndex);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const jobForm = document.getElementById('jobForm');
-    const jobList = document.getElementById('jobList');
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-    jobForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-        const jobTitle = document.getElementById('jobTitle').value;
-        const jobDescription = document.getElementById('jobDescription').value;
-
-        // Create a job listing
-        const jobItem = document.createElement('div');
-        jobItem.classList.add('job-item');
-
-        const titleElement = document.createElement('h2');
-        titleElement.classList.add('job-title');
-        titleElement.textContent = jobTitle;
-
-        const descriptionElement = document.createElement('p');
-        descriptionElement.classList.add('job-description');
-        descriptionElement.textContent = jobDescription;
-
-        jobItem.appendChild(titleElement);
-        jobItem.appendChild(descriptionElement);
-
-        jobList.appendChild(jobItem);
-
-        // Clear the form
-        jobForm.reset();
-    });
-});
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
