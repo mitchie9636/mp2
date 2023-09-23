@@ -1,5 +1,7 @@
 // Import needed packages
 const express = require('express');
+const axios = require('axios');
+const app = express();
 const { check, validationResult } = require('express-validator');
 
 // Create a server
@@ -64,6 +66,41 @@ router.post('/logout', (req, res) => {
     }
   });
 });
+
+
+
+router.get('/findjobs', async (req, res) => {
+  const job_id = req.query.job_id;
+
+  if (!job_id) {
+    return res.status(400).json({ error: 'findjobs' });
+  }
+
+  const options = {
+    method: 'GET',
+    url: 'https://jsearch.p.rapidapi.com/job-details',
+    params: {
+      job_id,
+      extended_publisher_details: 'false',
+    },
+    headers: {
+      'X-RapidAPI-Key': 'a290b14e4cmsh10439da46f740b6p185846jsn55c4c05f58d1',
+      'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    const jobDetails = response.data;
+    res.json(jobDetails);
+  } catch (error) {
+    console.error('Error fetching job details:', error);
+    res.status(500).json({ error: 'An error occurred' });
+  }
+});
+
+
+
 
 
 

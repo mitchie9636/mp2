@@ -144,13 +144,13 @@ body {
 
 .field-wrap input[type="email"],
 .field-wrap input[type="password"] {
-    width: 82%;
+    width: 75%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     color: #333;
-    margin-left: 5%;
+    margin-left: 13%;
 }
 
 .field-wrap input[type="email"]:hover,
@@ -200,8 +200,8 @@ a.forgot:hover {
 
 .eye-icon {
   float: right;
-  margin-right: 50px;
-  margin-top: -35px;
+  margin-right: 410px;
+  margin-top: -30px;
 }
 
 .forgot-pass{

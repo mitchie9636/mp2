@@ -16,7 +16,7 @@
         </div>
 
         <div class="links-container">
-            <a class="links" href="/findjobs.js">Find Jobs</a>
+            <a class="links" href="/findjobs">Find Jobs</a>
             <a class="links" href="companyreviews.html">Company Reviews</a>
             <a class="links" href="findsalaries.html">Find Salaries</a>
         </div>
@@ -46,23 +46,25 @@
         </div>
     </nav>
 
+    
     <main>
-      <main>
         <div class="jobsearch-container">
-        <input class="search-container" type="text" placeholder="Jobtitle, keywords, or company">
+          <input class="search-container" type="text" id="jobSearchInput" placeholder="Job title, keywords, or company">
         </div>
         <div class="locationsearch-container">
-        <input class="location-container" type="text" placeholder="City, province or POEA">
+          <input class="location-container" type="text" id="locationInput" placeholder="City, province, or POEA">
         </div>
-    
         <div class="text">
-            <a class="post-link" href="login"> Post your resume</a> - It only takes a few seconds
+          <a class="post-link" href="login"> Post your resume</a> - It only takes a few seconds
         </div>
         <div>
-            <button id="find-jobs-button" class="find-button">Find Jobs</button>
+          <button id="find-jobs-button" class="find-button">Find Jobs</button>
         </div>
-    </main><!-- Your main content goes here -->
-    </main>
+        <div class="jobsearch-result">
+          <!-- Display the fetched data here -->
+        </div>
+      </main>
+  
 
     <!-- custom JavaScript code goes here -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -86,5 +88,37 @@
             });
         });
     </script>
+
+<script>
+    document.getElementById('find-jobs-button').addEventListener('click', async () => {
+      const jobTitle = document.getElementById('jobSearchInput').value;
+      const location = document.getElementById('locationInput').value;
+
+      try {
+        const response = await fetch('/fetchJobSearchFilters', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+
+          // Get the jobsearch-result div element
+          const jobSearchResult = document.querySelector('.jobsearch-result');
+
+          // Display the fetched data within the jobsearch-result
+          jobSearchResult.innerHTML = JSON.stringify(data, null, 2);
+        } else {
+          console.error('Error fetching job search filters');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  </script>
+
+    <script src="your-script.js"></script>
 </body>
 </html>

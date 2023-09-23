@@ -114,20 +114,22 @@
         <% } %>
     </div>
 
-    <!-- JavaScript to show/hide password -->
-    <script>
-        const passwordInput = document.getElementById('password-input');
-        const showPasswordButton = document.getElementById('show-password-button');
 
-        showPasswordButton.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                showPasswordButton.querySelector('.eye-icon').textContent = '🔒';
-            } else {
-                passwordInput.type = 'password';
-                showPasswordButton.querySelector('.eye-icon').textContent = '👁️';
-            }
-        });
-    </script>
+      <!-- JavaScript to show/hide password -->
+<script>
+    const passwordInput = document.getElementById('password-input');
+    const showPasswordButton = document.getElementById('show-password-button');
+
+    showPasswordButton.addEventListener('click', () => {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            showPasswordButton.querySelector('.eye-icon').textContent = '🔒';
+        } else {
+            passwordInput.type = 'password';
+            showPasswordButton.querySelector('.eye-icon').textContent = '👁️';
+        }
+    });
+</script>
+
 </body>
 </html>

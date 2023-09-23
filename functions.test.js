@@ -12,8 +12,8 @@ test('should be falsy', ()=>{
     expect(functions.checkValue(1)).toBeTruthy();
 });
 
-test('should be kodego object', ()=>{
-    expect(functions.createUser()).toEqual({email:'kodego@test.com',password:'12345678'});
+test('should be TOS object', ()=>{
+    expect(functions.createUser()).toEqual({email:'Tos@test.com',password:'Tos12345'});
 });
 
 test('should be under 1600', ()=>{

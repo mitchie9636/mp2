@@ -5,7 +5,7 @@ const functions ={
     isNull:()=>null,
     checkValue:(x)=>x,
     createUser: ()=>{
-        const user = {email:'kodego@test.com',password:'12345678'}
+        const user = {email:'Tos@test.com',password:'Tos12345'}
         return user;
     },
     fetchUser: ()=> axios.get('https://jsonplaceholder.typicode.com/users/1')

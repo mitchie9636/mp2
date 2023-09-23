@@ -9,6 +9,7 @@ app.use(express.static('public'));
 const session = require('express-session');
 
 
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -30,17 +31,11 @@ app.use(session({
 
   }));
 
-  // Define a route to serve your HTML page --------------------------------
-// Define a route for the root URL that serves your login page
+  // a route to serve your HTML page --------------------------------
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/login.ejs');
 });
-
-// Define a route for the sign-up page
-app.get('/signup', (req, res) => {
-    res.sendFile(__dirname + '/signup.ejs');
-});
-
 
 
 //set the routes -----------------------------------   
@@ -51,7 +46,3 @@ app.use('/', router)
 app.listen(process.env.PORT, () => {
     console.log(`Server is running at http://${process.env.HOSTNAME}:${process.env.PORT}.`);
 });
-
-
-
-
