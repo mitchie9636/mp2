@@ -7,7 +7,7 @@ const { check, validationResult } = require('express-validator');
 // Create a server
 const router = express.Router();
 
-
+ // a route to server page --------------------------------
 
 //   route page
 router.get('/about', (req, res) => {
@@ -47,6 +47,8 @@ router.get('/view_job', (req, res) => {
 });
 
 // end of routes
+
+
 
 const credential = {
   email: 'Tos@test.com',

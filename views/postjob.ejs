@@ -19,15 +19,15 @@
         </a>
 
 
-            <nav class="navbar">
-                <a href="/static/home.ejs">home</a>
-                <a href="/static/about.ejs">about us</a>
-                <a href="/static/jobs.ejs">all jobs</a>
-                <a href="/static/contact.ejs">contact us</a>
-                <a href="/static/login.ejs">account</a>
-            </nav>
+        <nav class="navbar">
+            <a class="links" href="/home">Home</a>
+            <a class="links" href="/about">About Us</a>
+            <a class="links" href="/jobs">Jobs</a>
+            <a class="links" href="/contact">Contact Us</a>
+            <a class="links" href="/login">account</a>
+        </nav>
 
-            <a href="#" class="btn" style="margin-top: 0;">post job</a>
+            <a href="/postjob" class="btn-link" style="margin-top: 0;">post job</a>
         </section>
     </header>
 <!---header section ends -->
@@ -90,9 +90,44 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <!-- Footer content (links, copyright, etc.) -->
-    </footer>
+   <!---footer section starts-->
+
+<footer class="footer">
+    <section class="grid">
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="/static/home.ejs"><i class="fas fa-angle-right"></i> home</a>
+            <a href="/static/about.ejs"><i class="fas fa-angle-right"></i> about</a>
+            <a href="/static/jobs.ejs"><i class="fas fa-angle-right"></i> all jobs</a>
+            <a href="/static/contact.ejs"><i class="fas fa-angle-right"></i> contact us</a>
+            <a href="#"><i class="fas fa-angle-right"></i> filter search</a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"><i class="fas fa-angle-right"></i> account</a>
+            <a href="/static/login.ejs"><i class="fas fa-angle-right"></i> login</a>
+            <a href="/static/register.ejs"><i class="fas fa-angle-right"></i> register</a>
+            <a href="/static/postjob.ejs"><i class="fas fa-angle-right"></i> post job</a>
+            <a href="#"><i class="fas fa-angle-right"></i> dashboard</a>
+        </div>
+        
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+            <a href="#"><i class="fab fa-youtube"></i> youtube</a>
+        </div>
+    </section>
+
+    <div class="credit">&copy; copyright @ 2023 by <span>TOS</span> | all rights reserved!</div>
+</footer>
+
+
+<!---footer section ends-->
+
 
     <script src="/static/app.js"></script> <!-- Include your custom JavaScript file here -->
 </body>

@@ -1,42 +1,44 @@
 const express = require('express');  
 require('dotenv').config();         
-const ejs = require('ejs');         
+const ejs = require('ejs');       
 const path = require('path');         
 const router = require('./router');
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
+const { v4: uuidv4 } = require('uuid'); 
 const app = express();                            
-app.use(express.static('public'));
 const session = require('express-session');
 
 
-
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
 app.use(bodyParser.json());
 
-                                        //---------directories-------referring-public & views folder------------------
+                                     
+//set the templating engine
 app.set('view engine', 'ejs');
-app.use('/static', express.static(path.join(__dirname, 'public')));
-app.use('/assets', express.static(path.join(__dirname, 'public')));
 
-//--------end-directories--------------------------
+//set the folder to access the static assets
+app.use('/static',express.static(path.join(__dirname, 'public')));
+app.use('/assets',express.static(path.join(__dirname, 'public')));
 
- // a route to server page --------------------------------
 
 app.get('/', (req, res)=>{
-    res.render('home');
+  res.render('home');
 });
 
 
-app.use(session({
-    secret: 'Tos12345', // tos secret key
-    resave: false,
-    saveUninitialized: true,
 
-  }));
+// //configure the session
+// app.use(session({
+//     secret: uuidv4(),
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {secure:false}
+// }));
 
-
-//set the routes -----------------------------------   
-app.use('/', router)
+//specify the routers
+app.use('/', router);
 
 
                                                                      
