@@ -34,6 +34,10 @@ router.get('/register', (req, res) => {
   res.render('register', { title: 'register Page' });
 });
 
+router.get('/postjob', (req, res) => {
+  res.render('postjob', { title: 'postjob Page' });
+});
+
 router.get('/view_company', (req, res) => {
   res.render('view_company', { title: 'view_company Page' });
 });
