@@ -20,9 +20,12 @@ app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 //--------end-directories--------------------------
 
+ // a route to server page --------------------------------
+
 app.get('/', (req, res)=>{
-    res.render('main');
+    res.render('home');
 });
+
 
 app.use(session({
     secret: 'Tos12345', // tos secret key
@@ -30,12 +33,6 @@ app.use(session({
     saveUninitialized: true,
 
   }));
-
-  // a route to serve your HTML page --------------------------------
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/login.ejs');
-});
 
 
 //set the routes -----------------------------------   

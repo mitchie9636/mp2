@@ -9,10 +9,40 @@ const router = express.Router();
 
 
 
-//  login route
+//   route page
+router.get('/about', (req, res) => {
+  res.render('about', { title: 'about Page' });
+});
+
+router.get('/contact', (req, res) => {
+  res.render('contact', { title: 'contact Page' });
+});
+
+router.get('/home', (req, res) => {
+  res.render('home', { title: 'home Page' });
+});
+
+router.get('/jobs', (req, res) => {
+  res.render('jobs', { title: 'jobs Page' });
+});
+
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Login Page' });
 });
+
+router.get('/register', (req, res) => {
+  res.render('register', { title: 'register Page' });
+});
+
+router.get('/view_company', (req, res) => {
+  res.render('view_company', { title: 'view_company Page' });
+});
+
+router.get('/view_job', (req, res) => {
+  res.render('view_job', { title: 'view_job Page' });
+});
+
+// end of routes
 
 const credential = {
   email: 'Tos@test.com',
@@ -46,7 +76,9 @@ router.post('/login', [
   }
 });
 
-// Define your dashboard route
+//end or login
+
+// dashboard route
 router.get('/dashboard', (req, res) => {
   if (req.session && req.session.user) {
     res.render('dashboard', { title: 'Dashboard', user: req.session.user });
