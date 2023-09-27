@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title ? locals.title : 'View Company' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/icon.ico">  
+    <link rel="stylesheet" href="/static/style.css">                           <!---custom css file link-->
+
+
+
+</head>
+<body>
+    
+    <!---header section starts-->
+
+    <header class="header">
+        <section class="flex">
+            <div id="menu-btn" class="fas fa-bars-staggered"></div>
+            <a href="/static/about.ejs" class="logo"> 
+                <img src="/static/assets/logo.png" alt="Logo" style="width: 80px; height: 50px;"> <!-- Adjust width and height as needed -->
+                T'OutSourcing.
+            </a>
+
+
+            <nav class="navbar">
+                <a class="links" href="/home">Home</a>
+                <a class="links" href="/about">About Us</a>
+                <a class="links" href="/jobs">Jobs</a>
+                <a class="links" href="/contact">Contact Us</a>
+                <a class="links" href="/login">account</a>
+            </nav>
+
+            <a href="/postjob" class="btn-link" style="margin-top: 0;">post job</a>
+        </section>
+    </header>
+
+<!---header section ends -->
+
+
+<!----company details section starts-->
+<section class="view-company">
+    <h1 class="heading">company details</h1>
+    <div class="details">
+        <div class="info">
+            <img src="/static/assets/person.jpg" alt="">
+            <h3>IT Infosys co.</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Quezon City, Philippines</p>
+        </div>
+
+        <div class="description">
+            <h3>about company</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum hic voluptas deleniti rem! Eligendi ad ratione, atque eos quis similique.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, quis.</p>
+        </div>
+
+        <ul>
+            <li>3 jobs posted</li>
+            <li>established at 21-05-2004</li>
+            <li>200 working employees</li>
+        </ul>
+
+    </div>
+</section>
+
+
+<!----company details section ends-->
+
+<!---job section starts--->
+
+<section class="jobs-container">
+    <h1 class="heading">jobs they offer</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="company">
+                <img src="" alt="">
+                <div>
+                    <h3>IT Infosys co.</h3>
+                    <p>3 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
+            <div class="tags">
+                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
+                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
+                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
+            </div>
+            <div class="flex-btn">
+                <a href="/static/view_job.ejs" class="btn">view details</a>
+                <button type="submit" class="far fa-heart" name="save"></button>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <div class="company">
+                <img src="" alt="">
+                <div>
+                    <h3>IT Infosys co.</h3>
+                    <p>3 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
+            <div class="tags">
+                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
+                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
+                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
+            </div>
+            <div class="flex-btn">
+                <a href="/static/view_job.ejs" class="btn">view details</a>
+                <button type="submit" class="far fa-heart" name="save"></button>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <div class="company">
+                <img src="" alt="">
+                <div>
+                    <h3>IT Infosys co.</h3>
+                    <p>3 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
+            <div class="tags">
+                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
+                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
+                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
+            </div>
+            <div class="flex-btn">
+                <a href="/static/view_job.ejs" class="btn">view details</a>
+                <button type="submit" class="far fa-heart" name="save"></button>
+            </div>
+
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="/static/assets/person.jpg" alt="">
+                <div>
+                    <h3>IT Infosys co.</h3>
+                    <p>3 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
+            <div class="tags">
+                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
+                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
+                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
+            </div>
+            <div class="flex-btn">
+                <a href="/static/view_job.ejs" class="btn">view details</a>
+                <button type="submit" class="far fa-heart" name="save"></button>
+            </div>
+
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="" alt="">
+                <div>
+                    <h3>IT Infosys co.</h3>
+                    <p>3 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
+            <div class="tags">
+                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
+                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
+                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
+            </div>
+            <div class="flex-btn">
+                <a href="/static/view_job.ejs" class="btn">view details</a>
+                <button type="submit" class="far fa-heart" name="save"></button>
+            </div>
+
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="" alt="">
+                <div>
+                    <h3>IT Infosys co.</h3>
+                    <p>3 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
+            <div class="tags">
+                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
+                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
+                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
+            </div>
+            <div class="flex-btn">
+                <a href="/static/view_job.ejs" class="btn">view details</a>
+                <button type="submit" class="far fa-heart" name="save"></button>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<!---jobs section ends-->
+
+
+
+
+
+
+<!---footer section starts-->
+
+<footer class="footer">
+    <section class="grid">
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="/static/home.ejs"><i class="fas fa-angle-right"></i> home</a>
+            <a href="/static/about.ejs"><i class="fas fa-angle-right"></i> about</a>
+            <a href="/static/view_job.ejs"><i class="fas fa-angle-right"></i> all jobs</a>
+            <a href="/static/contact.ejs"><i class="fas fa-angle-right"></i> contact us</a>
+            <a href="#"><i class="fas fa-angle-right"></i> filter search</a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"><i class="fas fa-angle-right"></i> account</a>
+            <a href="/static/login.ejs"><i class="fas fa-angle-right"></i> login</a>
+            <a href="/static/register.ejs"><i class="fas fa-angle-right"></i> register</a>
+            <a href="#"><i class="fas fa-angle-right"></i> post job</a>
+            <a href="#"><i class="fas fa-angle-right"></i> dashboard</a>
+        </div>
+        
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+            <a href="#"><i class="fab fa-youtube"></i> youtube</a>
+        </div>
+    </section>
+
+    <div class="credit">&copy; copyright @ 2023 by <span>TOS</span> | all rights reserved!</div>
+</footer>
+
+
+<!---footer section ends-->
+
+
+    <!--custom js file link-->
+<script src="/static/app.js"></script>
+
+</body>
+</html>
