@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid'); 
 const app = express();                            
 const session = require('express-session');
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+
 
 
 // parse application/x-www-form-urlencoded
@@ -24,18 +27,18 @@ app.use('/assets',express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res)=>{
-  res.render('home');
+  res.render('login');
 });
 
 
 
-// //configure the session
-// app.use(session({
-//     secret: uuidv4(),
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {secure:false}
-// }));
+//configure the session
+app.use(session({
+    secret: uuidv4(),
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure:false}
+}));
 
 //specify the routers
 app.use('/', router);

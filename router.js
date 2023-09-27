@@ -1,15 +1,13 @@
 // Import needed packages
 const express = require('express');
 const axios = require('axios');
-const app = express();
 const { check, validationResult } = require('express-validator');
 
 // Create a server
 const router = express.Router();
 
- // a route to server page --------------------------------
+ //  route to live server page --------------------------------
 
-//   route page
 router.get('/about', (req, res) => {
   res.render('about', { title: 'about Page' });
 });
@@ -24,10 +22,6 @@ router.get('/home', (req, res) => {
 
 router.get('/jobs', (req, res) => {
   res.render('jobs', { title: 'jobs Page' });
-});
-
-router.get('/login', (req, res) => {
-  res.render('login', { title: 'Login Page' });
 });
 
 router.get('/register', (req, res) => {
@@ -49,6 +43,10 @@ router.get('/view_job', (req, res) => {
 // end of routes
 
 
+//  login route
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'Login Page' });
+});
 
 const credential = {
   email: 'Tos@test.com',
@@ -75,19 +73,17 @@ router.post('/login', [
     if (req.body.email === credential.email && req.body.password === credential.password) {
       // Set up a session
       req.session.user = req.body.email;
-      res.redirect('/dashboard');
+      res.redirect('/home');
     } else {
       res.render('login', { title: 'Login Page', isInvalid: 'Your credentials do not exist' });
     }
   }
 });
 
-//end or login
-
-// dashboard route
-router.get('/dashboard', (req, res) => {
+// Define your dashboard route
+router.get('/home', (req, res) => {
   if (req.session && req.session.user) {
-    res.render('dashboard', { title: 'Dashboard', user: req.session.user });
+    res.render('home', { title: 'home', user: req.session.user });
   } else {
     res.sendStatus(403);
   }
