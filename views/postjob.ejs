@@ -38,31 +38,31 @@
             <form action="/submit_job" method="POST">
                 <!-- Job Title -->
                 <div class="form-group">
-                    <label for="jobTitle">Job Title:</label>
+                    <label for="jobTitle">Job Title:<span>*</span></label>
                     <input type="text" id="jobTitle" name="jobTitle" required>
                 </div>
 
                 <!-- Company Name -->
                 <div class="form-group">
-                    <label for="companyName">Company Name:</label>
+                    <label for="companyName">Company Name:<span>*</span></label>
                     <input type="text" id="companyName" name="companyName" required>
                 </div>
 
                 <!-- Location -->
                 <div class="form-group">
-                    <label for="location">Location:</label>
+                    <label for="location">Location:<span>*</span></label>
                     <input type="text" id="location" name="location" required>
                 </div>
 
                 <!-- Salary -->
                 <div class="form-group">
-                    <label for="salary">Salary:</label>
+                    <label for="salary">Salary:<span>*</span></label>
                     <input type="text" id="salary" name="salary">
                 </div>
 
                 <!-- Job Type -->
                 <div class="form-group">
-                    <label for="jobType">Job Type:</label>
+                    <label for="jobType">Job Type: <span>*</span></label>
                     <select id="jobType" name="jobType">
                         <option value="full-time">Full-time</option>
                         <option value="part-time">Part-time</option>
@@ -72,23 +72,23 @@
 
                 <!-- Job Description -->
                 <div class="form-group">
-                    <label for="jobDescription">Job Description:</label>
+                    <label for="jobDescription">Job Description:<span>*</span></label>
                     <textarea id="jobDescription" name="jobDescription" rows="4" required></textarea>
                 </div>
 
                 <!-- Application Deadline -->
                 <div class="form-group">
-                    <label for="deadline">Application Deadline:</label>
+                    <label for="deadline">Application Deadline:<span>*</span></label>
                     <input type="date" id="deadline" name="deadline" required>
                 </div>
 
                 <!-- Submit Button -->
-                <div class="form-group">
-                    <button type="submit" class="btn">Submit</button>
-                </div>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </section>
     </main>
+
+    
 
    <!---footer section starts-->
 
