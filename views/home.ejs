@@ -24,21 +24,12 @@
             <a class="links" href="/about">About Us</a>
             <a class="links" href="/jobs">Jobs</a>
             <a class="links" href="/contact">Contact Us</a>
-            <div class="profile-dropdown">
-                <!-- Replace 'User's Email' with the actual email address -->
-                <a class="links" href="#">My Profile <span class="arrow-down">&#9660;</span></a>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <%= locals.user ? locals.user : 'No email found'  %>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">My Jobs</a></li>
-                    <li><a href="#">My Reviews</a></li>
-                        <form action="/logout" method="POST">
-                            <button class="btn btn-danger">Logout</button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+            <div class="text-center center-div mt-5" id="login">
+                <div class="container w-25 border py-5 mt-5">
+                  <h5><%= locals.user ? user : 'No email found'  %></h5>
+                  <a href="#" id="logout-link">Logout</a>
+                </div>
+              </div>
         </nav>
         <a href="/postjob" class="btn-link" style="margin-top: 0;">post job</a>
     </section>
@@ -312,20 +303,30 @@
 <!-- custom JavaScript code goes here -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function(){
-        // Toggle the dropdown menu on button click
-        $(".profile-dropdown a.links").click(function(){
-            $(".dropdown-menu").toggle();
-        });
-
-        // Close the dropdown menu when clicking outside of it
-        $(window).click(function(event){
-            if (!event.target.matches('.profile-dropdown a.links')) {
-                $(".dropdown-menu").hide();
-            }
-        });
+  $(document).ready(function(){
+    // Toggle the dropdown menu on button click
+    $(".profile-dropdown a.links").click(function(){
+      $(".dropdown-menu").toggle();
     });
+
+    // Logout functionality
+    $("#logout-link").click(function(e) {
+      e.preventDefault();
+      window.location.href = "/login"; // Replace with your actual login page URL
+    });
+
+    // Close the dropdown menu when clicking outside of it
+    $(window).click(function(event){
+                if (!event.target.matches('.profile-dropdown button')) {
+                    var dropdowns = $(".dropdown-content");
+                    dropdowns.each(function() {
+                        $(this).hide();
+                    });
+                }
+            });
+  });
 </script>
+
 <script src="/static/app.js"></script>
 
 

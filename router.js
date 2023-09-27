@@ -1,7 +1,6 @@
 // Import needed packages
 const express = require('express');
 const axios = require('axios');
-const app = express();
 const { check, validationResult } = require('express-validator');
 
 // Create a server
