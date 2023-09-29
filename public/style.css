@@ -86,7 +86,7 @@ body {
   /* Style the logout link */
   #logout-link {
     text-decoration: none;
-    color: #007bff;
+    color: #ea0101;
     font-weight: bold;
     transition: opacity 0.3s; /* Add a smooth transition effect for opacity */
   }

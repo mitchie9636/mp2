@@ -36,7 +36,7 @@
         <div class="text-center center-div mt-5" id="login" onmouseenter="showLogoutLink()" onmouseleave="hideLogoutLink()">
             <div class="container w-25 border py-5 mt-5">
               <h5><%= locals.user ? user : 'No email found' %></h5>
-              <a href="#" id="logout-link" class="hidden">Logout</a>
+              <a href="/login" id="logout-link" class="hidden">Logout</a>
             </div>
           </div>
 
@@ -86,15 +86,21 @@
     <script src="/static/api.js"></script>
 
     <script>
-    function showLogoutLink() {
-        var logoutLink = document.getElementById('logout-link');
-        logoutLink.classList.remove('hidden');
-      }
+        // Get the username from the session and display it
+        const username = sessionStorage.getItem('username');
+        if (username) {
+          document.getElementById('email').textContent = username;
+        }
       
-      function hideLogoutLink() {
-        var logoutLink = document.getElementById('logout-link');
-        logoutLink.classList.add('hidden');
-      }
+        function showLogoutLink() {
+          var logoutLink = document.getElementById('logout-link');
+          logoutLink.classList.remove('hidden');
+        }
+      
+        function hideLogoutLink() {
+          var logoutLink = document.getElementById('logout-link');
+          logoutLink.classList.add('hidden');
+        }
       </script>
 
 
