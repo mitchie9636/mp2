@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title ? locals.title : 'Foodies' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">  
+    <link rel="stylesheet" href="/static/style.css"> 
+                    
+
+
+
+</head>
+<body>
+
+
+
+<!-----login section starts-->
+<div class="account-form-container">
+    <section class="account-form">
+        <form action="/login" method="post">
+            <h3>Foodies</h3>
+                <input type="email" required name="email" maxlength="50" placeholder="Enter your email" class="input">
+                <input type="password" required name="password" maxlength="20" placeholder="Enter your password" class="input" id="password">
+                <span class="hide-show-icon" id="password-icon" onclick="togglePassword('password')">
+                    <i class="fas fa-eye"></i>
+                </span>
+                <p>Don't have an account? <a href="/register">Register here</a></p>
+                <input type="submit" value="Login" name="submit" class="btn">
+            </div> <!-- Close the div container here -->
+        </form>
+    </section>
+</div>
+
+
+<footer class="footer">
+   
+    <div class="credit">&copy; copyright @ 2023 by <span>TOS</span> | all rights reserved!</div>
+</footer>
+
+
+
+ <!--custom js file link-->
+ <script>
+    // Function to toggle password visibility
+    function togglePassword(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const passwordIcon = document.getElementById(inputId + "-icon");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordIcon.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        } else {
+            passwordInput.type = "password";
+            passwordIcon.innerHTML = '<i class="fas fa-eye"></i>';
+        }
+    }
+</script>
+
+<script src="/static/login.js"></script>
+
+</body>
+</html>

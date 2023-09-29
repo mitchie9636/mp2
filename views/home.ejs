@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title ? locals.title : 'Foodies' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">  
+    <link rel="stylesheet" href="/static/style.css"> 
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Meal App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/e6f12e5790.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="background-image">
+        <img src="/static/assets/background-cooking.avif" alt="" />
+    </div>
+    <div id="navbar">
+        <a href="/home.ejs">
+            <div class="top-logo">The Foodies App
+            </hr>
+            </div>
+        </a>
+
+
+        <div class="text-center center-div mt-5" id="login" onmouseenter="showLogoutLink()" onmouseleave="hideLogoutLink()">
+            <div class="container w-25 border py-5 mt-5">
+              <h5><%= locals.user ? user : 'No email found' %></h5>
+              <a href="#" id="logout-link" class="hidden">Logout</a>
+            </div>
+          </div>
+
+
+        <div class="side-drawer">
+            <div id="toggle-sidebar">
+                <i class="fa-solid fa-bars"></i>
+                <span id="total-counter">0</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="sidebar">
+            <div class="top_gap"></div>
+            <hr />
+            <div class="title small">
+                Favorite Items
+            </div>
+            <hr />
+            <div id="fav">      
+            </div>
+        </div>
+        <div id="flex-box">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                        Fresh | Hygienic | Delicious | Healthy
+                    </div>
+                </div>
+                <div class="" id="search-bar">
+                    <div class="icon">
+                        <i class="fa-solid fa-search "></i>
+                    </div>
+                    <div class="new-search-input">
+                        <form onkeyup="showMealList()">
+                            <input id="search-input" type="text" placeholder="Search food, recipe" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="cards-holder" class="">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/static/api.js"></script>
+
+    <script>
+    function showLogoutLink() {
+        var logoutLink = document.getElementById('logout-link');
+        logoutLink.classList.remove('hidden');
+      }
+      
+      function hideLogoutLink() {
+        var logoutLink = document.getElementById('logout-link');
+        logoutLink.classList.add('hidden');
+      }
+      </script>
+
+
+
+
+</body>
+</html>

@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid'); 
 const app = express();                            
 const session = require('express-session');
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
+// const low = require('lowdb');
+// const FileSync = require('lowdb/adapters/FileSync');
 
 
 
