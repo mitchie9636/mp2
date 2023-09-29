@@ -37,10 +37,11 @@ a:visited{
 }
 
 body {
-    background-color: rgba(220, 150, 19, 0.863);
+    background-color: rgba(213, 158, 57, 0.863);
     display: flex;
     justify-content: center;
 }
+
 
 #navbar {
     display: flex;
@@ -67,6 +68,7 @@ body {
     color: hsl(234, 39%, 85%);
     text-shadow: 2px -1px 6px hsl(234, 39%, 85%);
     flex-direction: column;
+    margin-left: -350px;
 }
 
 .text-center.center-div {
@@ -77,37 +79,86 @@ body {
   }
   
   
-  /* Style the h5 element inside the container */
+/* Style the navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  /* Style the logo */
+  #navbar img {
+    width: 70px;
+    height: 40px;
+  }
+  
+  /* Style the logo text */
+  #navbar .top-logo {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+  
+  /* Style the login section */
+  #login {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  
+  /* Style the text inside the container */
   .container.w-25.border h5 {
     font-size: 18px;
-    margin: 0;
+    margin-top: 10px;
   }
   
   /* Style the logout link */
   #logout-link {
     text-decoration: none;
-<<<<<<< HEAD
-    color: orange;
-=======
-    color: #ea0101;
->>>>>>> 2292731d5c3038e6916611b5e149d61fd7a745bf
+    color: #007bff;
     font-weight: bold;
-    transition: opacity 0.3s; /* Add a smooth transition effect for opacity */
   }
   
   /* Hide the logout link by default */
   #logout-link.hidden {
-    opacity: 0;
-    pointer-events: none; /* Disable pointer events to prevent interaction when hidden */
+    display: none;
   }
   
   /* Show the logout link on hover */
-  #logout-link:hover {
-    opacity: 1;
+  #login:hover #logout-link {
+    display: inline; /* Show the logout link when hovering over the login div */
   }
-
-
-
+  
+  /* Style the side drawer */
+  .side-drawer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Style the toggle sidebar button */
+  #toggle-sidebar {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  /* Style the total counter badge */
+  #total-counter {
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+  
+  
 
 .side-drawer {
     display: flex;

@@ -25,10 +25,12 @@
     <div class="background-image">
         <img src="/static/assets/background-cooking.avif" alt="" />
     </div>
+    
+<!-- navbar area -->
     <div id="navbar">
+        <img src="/static/assets/logo.png" alt="Logo" style="width: 70px; height: 40px;">
         <a href="/home.ejs">
-            <div class="top-logo">The Foodies App
-            </hr>
+            <div class="top-logo">Foodies App
             </div>
         </a>
 
@@ -36,10 +38,10 @@
         <div class="text-center center-div mt-5" id="login" onmouseenter="showLogoutLink()" onmouseleave="hideLogoutLink()">
             <div class="container w-25 border py-5 mt-5">
               <h5><%= locals.user ? user : 'No email found' %></h5>
-              <a href="#" id="logout-link" class="hidden">Logout</a>
+              <a href="/login" id="logout-link" class="hidden">Logout</a>
             </div>
           </div>
-
+          
 
         <div class="side-drawer">
             <div id="toggle-sidebar">
@@ -48,6 +50,9 @@
             </div>
         </div>
     </div>
+<!-- navbar area end-->
+
+<!-- body display start -->
     <div id="main">
         <div id="sidebar">
             <div class="top_gap"></div>
@@ -81,21 +86,22 @@
             </div>
         </div>
     </div>
-
+<!-- body display end -->
 
     <script src="/static/api.js"></script>
 
     <script>
-    function showLogoutLink() {
-        var logoutLink = document.getElementById('logout-link');
-        logoutLink.classList.remove('hidden');
-      }
+        function showLogoutLink() {
+          var logoutLink = document.getElementById('logout-link');
+          logoutLink.classList.remove('hidden');
+        }
       
-      function hideLogoutLink() {
-        var logoutLink = document.getElementById('logout-link');
-        logoutLink.classList.add('hidden');
-      }
+        function hideLogoutLink() {
+          var logoutLink = document.getElementById('logout-link');
+          logoutLink.classList.add('hidden');
+        }
       </script>
+      
 
 
 
