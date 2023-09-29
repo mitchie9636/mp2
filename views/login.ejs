@@ -3,107 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title ? locals.title : 'Log In' %></title>
-    <link rel="icon" type="image/x-icon" href="/static/assets/icon.ico">  
-    <link rel="stylesheet" href="/static/style.css">                           <!---custom css file link-->
-
-
+    <title><%= locals.title ? locals.title : 'Foodies' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">  
+    <link rel="stylesheet" href="/static/login.css"> 
 
 </head>
 <body>
-    
-    <!---header section starts-->
+<!--navbar starts-->
 
-    <header class="header">
-        <section class="flex">
-            <div id="menu-btn" class="fas fa-bars-staggered"></div>
-            <a href="/static/about.ejs" class="logo"> 
-                <img src="/static/assets/logo.png" alt="Logo" style="width: 80px; height: 50px;"> <!-- Adjust width and height as needed -->
-                T'OutSourcing.
-            </a>
+<!--navbar ends-->
 
-
-            <nav class="navbar">
-                <a class="links" href="/home">Home</a>
-                <a class="links" href="/about">About Us</a>
-                <a class="links" href="/jobs">Jobs</a>
-                <a class="links" href="/contact">Contact Us</a>
-                <a class="links" href="/login">account</a>
-            </nav>
-
-            <a href="/postjob" class="btn-link" style="margin-top: 0;">post job</a>
-        </section>
-    </header>
-
-<!---header section ends -->
 
 <!-----login section starts-->
-<div class="account-form-container">
-    <section class="account-form">
-        <form action="" method="post">
-            <h3>Welcome Back!</h3>
-            <input type="email" required name:email maxlength="50" placeholder="enter your email"  class="input">
-            <input type="password" required name:pass maxlength="20" placeholder="enter your password"  class="input">
-            <p>don't have an account? <a href="/static/register.ejs">register here</a></p>
-            <input type="submit" value="login" name="submit" class="btn">
-        </form>
-    </section>
+<div class="text-center center-div" id="login">
+    <div class="container w-25 border py-5">
+        <div class="title pb-5">
+           <h2 class="font-weight-bold">
+            Foodies App
+           </h2>
+            <span class="label">
+            Login for the existing user
+        </span>
+        <% if(locals.logout) {%>
+            <div class="alert alert-success text-center">
+                <%= logout%>
+            </div>
+        <%}%>
+        </div>
+
+    <form action="/login" method="POST">
+        <div class="form-group">
+            <input type="email" placeholder="email" class="form-control" value="Tos@test.com" name="email">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="password" placeholder="password" class="form-control" value="Tos12345" name="password">
+        </div>
+        <br>
+         <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+       
+    </form>
+    <br>
+     <% if(locals.errors) {%>
+            <div class="alert alert-danger text-center">
+                <%= errors%>
+            </div>
+        <%}%>
+         <% if(locals.isInvalid) {%>
+            <div class="alert alert-danger text-center">
+                <%= isInvalid%>
+            </div>
+        <%}%>
+      </div>
 </div>
-
-
 <!-----login section ends-->
 
-
-
-
-
-
-
-
-
-
-
-<!---footer section starts-->
-
 <footer class="footer">
-    <section class="grid">
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="/static/home.ejs"><i class="fas fa-angle-right"></i> home</a>
-            <a href="/static/about.ejs"><i class="fas fa-angle-right"></i> about</a>
-            <a href="/static/jobs.ejs"><i class="fas fa-angle-right"></i> all jobs</a>
-            <a href="/static/contact.ejs"><i class="fas fa-angle-right"></i> contact us</a>
-            <a href="#"><i class="fas fa-angle-right"></i> filter search</a>
-        </div>
-
-        <div class="box">
-            <h3>extra links</h3>
-            <a href="#"><i class="fas fa-angle-right"></i> account</a>
-            <a href="/static/login.ejs"><i class="fas fa-angle-right"></i> login</a>
-            <a href="/static/register.ejs"><i class="fas fa-angle-right"></i> register</a>
-            <a href="/static/postjob.ejs"><i class="fas fa-angle-right"></i> post job</a>
-            <a href="#"><i class="fas fa-angle-right"></i> dashboard</a>
-        </div>
-        
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
-            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
-            <a href="#"><i class="fab fa-instagram"></i> instagram</a>
-            <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
-            <a href="#"><i class="fab fa-youtube"></i> youtube</a>
-        </div>
-    </section>
-
+   
     <div class="credit">&copy; copyright @ 2023 by <span>TOS</span> | all rights reserved!</div>
 </footer>
 
 
-<!---footer section ends-->
 
+ <!--custom js file link-->
+ <script>
+    // Function to toggle password visibility
+    function togglePassword(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const passwordIcon = document.getElementById(inputId + "-icon");
 
-    <!--custom js file link-->
-<script src="/static/app.js"></script>
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordIcon.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        } else {
+            passwordInput.type = "password";
+            passwordIcon.innerHTML = '<i class="fas fa-eye"></i>';
+        }
+    }
+</script>
+
+<script src="/static/login.js"></script>
 
 </body>
 </html>

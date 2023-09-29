@@ -3,302 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title ? locals.title : 'Home' %></title>
-    <link rel="icon" type="image/x-icon" href="/static/assets/icon.ico">  
-    <link rel="stylesheet" href="/static/style.css">                           <!---custom css file link-->
+    <title><%= locals.title ? locals.title : 'Foodies' %></title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">  
+    <link rel="stylesheet" href="/static/style.css"> 
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Meal App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/e6f12e5790.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
+
+    <div class="background-image">
+        <img src="/static/assets/background-cooking.avif" alt="" />
+    </div>
     
-<!---header section starts-->
-<header class="header">
-    <section class="flex">
-        <div id="menu-btn" class="fas fa-bars-staggered"></div>
-        <a href="/static/about.ejs" class="logo"> 
-            <img src="/static/assets/logo.png" alt="Logo" style="width: 80px; height: 50px;"> <!-- Adjust width and height as needed -->
-            T'OutSourcing.
-        </a>
-
-
-            <nav class="navbar">
-                <a class="links" href="/home">Home</a>
-                <a class="links" href="/about">About Us</a>
-                <a class="links" href="/jobs">Jobs</a>
-                <a class="links" href="/contact">Contact Us</a>
-                <a class="links" href="/login">account</a>
-            </nav>
-
-            <a href="/postjob" class="btn-link" style="margin-top: 0;">post job</a>
-        </section>
-    </header>
-<!---header section ends -->
-
-<!---home section starts-->
-<div class="home-container">
-
-    <section class="home">
-        <form action="" method="post">
-            <h3>find your next job</h3>
-            <p>job title <span>*</span></p>
-            <input type="text" name="title"  placeholder="keyword, catergory or company" required maxlength="20" class="input">
-            <p>job location</p>
-            <input type="text" name="location"  placeholder="city, state or country" required maxlength="50" class="input">
-            <input type="submit" value="search job" name="search" class="btn">
-    </section>
-</div>
-<!---home section ends-->
-
-<!---category section starts-->
-<section class="category">
-    <h1 class="heading">job categories</h1>
-
-    <div class="box-container">
-        <a href="#" class="box">
-            <i class="fas fa-code"></i>
-            <div>
-                <h3>development</h3>
-                <span>2200 jobs</span>
+<!-- navbar area -->
+    <div id="navbar">
+        <img src="/static/assets/logo.png" alt="Logo" style="width: 100px; height: 40px;">
+        <a href="/home.ejs">
+            <div class="top-logo">Foodies App
             </div>
         </a>
-        <a href="#" class="box">
-            <i class="fas fa-person-digging"></i>
-            <div>
-                <h3>labour</h3>
-                <span>3308 jobs</span>
-            </div>
-        </a>
-        <a href="#" class="box">
-            <i class="fas fa-hand-holding-dollar"></i>
-            <div>
-                <h3>finance</h3>
-                <span>398 jobs</span>
-            </div>
-        </a>
-        <a href="#" class="box">
-            <i class="fa fa-pen-nib"></i>
-            <div>
-                <h3>designer</h3>
-                <span>225 jobs</span>
-            </div>
-        </a>
-        <a href="#" class="box">
-            <i class="fa fa-chalkboard-user"></i>
-            <div>
-                <h3>teacher</h3>
-                <span>1356 jobs</span>
-            </div>
-        </a>
-        <a href="#" class="box">
-            <i class="fa fa-megaphone"></i>
-            <div>
-                <h3>marketing</h3>
-                <span>890 jobs</span>
-            </div>
-        </a>
-        <a href="#" class="box">
-            <i class="fa fa-wrench"></i>
-            <div>
-                <h3>engineer</h3>
-                <span>1009 jobs</span>
-            </div>
-        </a>
-    </div>
-</section>
-<!---category section ends-->
 
-<!---job section starts--->
 
-<section class="jobs-container">
-    <h1 class="heading">latest jobs</h1>
-    <div class="box-container">
-        <div class="box">
-            <div class="company">
-                <img src="" alt="">
-                <div>
-                    <h3>IT Infosys co.</h3>
-                    <p>3 days ago</p>
-                </div>
+        <div class="text-center center-div mt-5" id="login" onmouseenter="showLogoutLink()" onmouseleave="hideLogoutLink()">
+            <div class="container w-25 border py-5 mt-5">
+              <h5><%= locals.user ? user : 'My Account' %></h5>
+              <a href="/login" id="logout-link" class="hidden">Logout</a>
             </div>
-            <h3 class="job-title">senior web developer</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
-            <div class="tags">
-                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
-                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
-                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
-            </div>
-            <div class="flex-btn">
-                <a href="/static/view_job.ejs" class="btn">view details</a>
-                <button type="submit" class="far fa-heart" name="save"></button>
-            </div>
+          </div>
+          
 
-        </div>
-
-        <div class="box">
-            <div class="company">
-                <img src="" alt="">
-                <div>
-                    <h3>IT Infosys co.</h3>
-                    <p>3 days ago</p>
-                </div>
+        <div class="side-drawer">
+            <div id="toggle-sidebar">
+                <i class="fa-solid fa-bars"></i>
+                <span id="total-counter">0</span>
             </div>
-            <h3 class="job-title">senior web developer</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
-            <div class="tags">
-                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
-                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
-                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
-            </div>
-            <div class="flex-btn">
-                <a href="/static/view_job.ejs" class="btn">view details</a>
-                <button type="submit" class="far fa-heart" name="save"></button>
-            </div>
-
-        </div>
-
-        <div class="box">
-            <div class="company">
-                <img src="" alt="">
-                <div>
-                    <h3>IT Infosys co.</h3>
-                    <p>3 days ago</p>
-                </div>
-            </div>
-            <h3 class="job-title">senior web developer</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
-            <div class="tags">
-                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
-                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
-                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
-            </div>
-            <div class="flex-btn">
-                <a href="/static/view_job.ejs" class="btn">view details</a>
-                <button type="submit" class="far fa-heart" name="save"></button>
-            </div>
-
-        </div>
-        <div class="box">
-            <div class="company">
-                <img src="/static/assets/person.jpg" alt="">
-                <div>
-                    <h3>IT Infosys co.</h3>
-                    <p>3 days ago</p>
-                </div>
-            </div>
-            <h3 class="job-title">senior web developer</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
-            <div class="tags">
-                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
-                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
-                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
-            </div>
-            <div class="flex-btn">
-                <a href="/static/view_job.ejs" class="btn">view details</a>
-                <button type="submit" class="far fa-heart" name="save"></button>
-            </div>
-
-        </div>
-        <div class="box">
-            <div class="company">
-                <img src="" alt="">
-                <div>
-                    <h3>IT Infosys co.</h3>
-                    <p>3 days ago</p>
-                </div>
-            </div>
-            <h3 class="job-title">senior web developer</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
-            <div class="tags">
-                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
-                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
-                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
-            </div>
-            <div class="flex-btn">
-                <a href="/static/view_job.ejs" class="btn">view details</a>
-                <button type="submit" class="far fa-heart" name="save"></button>
-            </div>
-
-        </div>
-        <div class="box">
-            <div class="company">
-                <img src="" alt="">
-                <div>
-                    <h3>IT Infosys co.</h3>
-                    <p>3 days ago</p>
-                </div>
-            </div>
-            <h3 class="job-title">senior web developer</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i><span>Quezon City, Philippines</span></p>
-            <div class="tags">
-                <p><i class="fas fa-peso-sign"><span>60k - 70k</span></i></p>
-                <p><i class="fas fa-briefcase"><span>full-time</span></i></p>
-                <p><i class="fas fa-clock"><span>Shifting sched</span></i></p>
-            </div>
-            <div class="flex-btn">
-                <a href="/static/view_job.ejs" class="btn">view details</a>
-                <button type="submit" class="far fa-heart" name="save"></button>
-            </div>
-
         </div>
     </div>
+<!-- navbar area end-->
 
-    <div style="text-align: center; margin-top: 1rem">
-        <a href="/static/app.js" class="btn">view all</a>
+<!-- body display start -->
+    <div id="main">
+        <div id="sidebar">
+            <div class="top_gap"></div>
+            <hr />
+            <div class="title small">
+                Favorite Items
+            </div>
+            <hr />
+            <div id="fav">      
+            </div>
+        </div>
+        <div id="flex-box">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                        GOOD FOOD | GOOD LIFE
+                    </div>
+                </div>
+                <div class="" id="search-bar">
+                    <div class="icon">
+                        <i class="fa-solid fa-search "></i>
+                    </div>
+                    <div class="new-search-input">
+                        <form onkeyup="showMealList()">
+                            <input id="search-input" type="text" placeholder="Search food, recipe" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="cards-holder" class="">
+            </div>
+        </div>
     </div>
+<!-- body display end -->
 
-</section>
+    <script src="/static/api.js"></script>
 
-
-
-<!---jobs section ends-->
-
-
-
-
-
-
-
-
-<!---footer section starts-->
-
-<footer class="footer">
-    <section class="grid">
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="/static/home.ejs class="fas fa-angle-right"></i> home</a>
-            <a href="/static/about.ejs"><i class="fas fa-angle-right"></i> about</a>
-            <a href="/static/jobs.ejs"><i class="fas fa-angle-right"></i> all jobs</a>
-            <a href="/static/contact.ejs"><i class="fas fa-angle-right"></i> contact us</a>
-            <a href="#"><i class="fas fa-angle-right"></i> filter search</a>
-        </div>
-
-        <div class="box">
-            <h3>extra links</h3>
-            <a href="#"><i class="fas fa-angle-right"></i> account</a>
-            <a href="/static/login.ejs"><i class="fas fa-angle-right"></i> login</a>
-            <a href="/static/register.ejs"><i class="fas fa-angle-right"></i> register</a>
-            <a href="/static/postjob.ejs"><i class="fas fa-angle-right"></i> post job</a>
-            <a href="#"><i class="fas fa-angle-right"></i> dashboard</a>
-        </div>
-        
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
-            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
-            <a href="#"><i class="fab fa-instagram"></i> instagram</a>
-            <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
-            <a href="#"><i class="fab fa-youtube"></i> youtube</a>
-        </div>
-    </section>
-
-    <div class="credit">&copy; copyright @ 2023 by <span>TOS</span> | all rights reserved!</div>
-</footer>
+    <script>
+        function showLogoutLink() {
+          var logoutLink = document.getElementById('logout-link');
+          logoutLink.classList.remove('hidden');
+        }
+      
+        function hideLogoutLink() {
+          var logoutLink = document.getElementById('logout-link');
+          logoutLink.classList.add('hidden');
+        }
+      </script>
+      
 
 
-<!---footer section ends-->
 
-
-    <!--custom js file link-->
-<script src="/static/app.js"></script>
 
 </body>
 </html>
