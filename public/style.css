@@ -37,11 +37,10 @@ a:visited{
 }
 
 body {
-    background-color: rgba(213, 158, 57, 0.863);
+    background-color: hsl(37, 69%, 36%);
     display: flex;
     justify-content: center;
 }
-
 
 #navbar {
     display: flex;
@@ -68,97 +67,49 @@ body {
     color: hsl(234, 39%, 85%);
     text-shadow: 2px -1px 6px hsl(234, 39%, 85%);
     flex-direction: column;
-    margin-left: -350px;
 }
-
-.text-center.center-div {
+/* Style for the logo image */
+img {
+    width: 100px;
+    height: 40px; 
+    margin-left: 3px;
+    margin-top: 2px;
+  }
+ 
+  /* Style for the top logo */
+.top-logo {
+    font-size: 20px; 
+    color: #c8bfbf; 
+    margin-left: -130px; 
+  }
+  
+/* Style for the login container */
+#login {
+    text-align: center;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
-    height: 1vh; /* Adjust the height as needed */
+    color: azure;
+    margin-top: -150px;
+    margin-left: 700px;
   }
   
-  
-/* Style the navbar */
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
-  }
-  
-  /* Style the logo */
-  #navbar img {
-    width: 70px;
-    height: 40px;
-  }
-  
-  /* Style the logo text */
-  #navbar .top-logo {
-    font-size: 24px;
-    margin-left: 10px;
-  }
-  
-  /* Style the login section */
-  #login {
-    display: flex;
-    align-items: center;
-  }
-  
-
-  
-  /* Style the text inside the container */
-  .container.w-25.border h5 {
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  
-  /* Style the logout link */
-  #logout-link {
+  /* Style for the logout link */
+#logout-link {
     text-decoration: none;
-    color: #007bff;
+    color: #cb9109eb;
     font-weight: bold;
   }
-  
+
   /* Hide the logout link by default */
-  #logout-link.hidden {
+#logout-link.hidden {
     display: none;
   }
   
   /* Show the logout link on hover */
   #login:hover #logout-link {
-    display: inline; /* Show the logout link when hovering over the login div */
+    display: inline; 
   }
-  
-  /* Style the side drawer */
-  .side-drawer {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  /* Style the toggle sidebar button */
-  #toggle-sidebar {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  /* Style the total counter badge */
-  #total-counter {
-    background-color: #007bff;
-    color: white;
-    font-size: 14px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    margin-left: 5px;
-  }
-  
-  
 
 .side-drawer {
     display: flex;
@@ -168,7 +119,7 @@ body {
 }
 
 #total-counter {
-    color: rgb(238, 231, 231);
+    color: rgb(226, 161, 12);
     position: relative;
     left: -16px;
     top: -10px;
@@ -378,7 +329,7 @@ body {
     letter-spacing: 1px;
     text-align: center;
     font-family: Segoe UI Symbol;
-    text-shadow: 3px -2px 5px orange;
+    text-shadow: 3px -2px 5px hsl(234, 84%, 46%);
 }
 
 #search-bar {
@@ -612,7 +563,7 @@ body {
     height: 30px;
     font-size: 1.5rem;
     color: hsl(234, 39%, 85%);
-    text-shadow: 3px -2px 5px orange;
+    text-shadow: 3px -2px 5px hsl(234, 84%, 46%);
 }
 
 .card-name:hover {
@@ -670,11 +621,93 @@ body {
     cursor: pointer;
     color: hsl(0, 0%, 96%)
 }
-.title h2{
-    color: white;
-    padding: 0.5rem;
-    margin-top: 13rem;
-    text-align: center;
-    justify-content: center;
 
+/* Base styles for larger screens */
+body {
+    background-color: hsl(37, 69%, 36%);
+    display: flex;
+    justify-content: center;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    box-shadow: 2px 2px 30px -10px hsl(235, 24%, 19%);
+    background-color: rgb(17, 32, 61);
+    /* Z 1 ensure that it will remain on top whos zindex value less then 1 */
+    z-index: 1;
+    justify-content: space-between;
+}
+
+/* Style for the logo image */
+img {
+    width: 100px;
+    height: 40px; 
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+/* Style for the top logo */
+.top-logo {
+    font-size: 20px; 
+    color: #c8bfbf; 
+    margin-left: -130px; 
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Adjust styles for mobile screens here */
+    #navbar {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    img {
+        width: 80px; /* Adjust image width for mobile */
+        height: 32px; /* Adjust image height for mobile */
+        margin-left: 0; /* Remove margin for mobile */
+        margin-top: 0; /* Remove margin for mobile */
+    }
+
+    .top-logo {
+        font-size: 18px; /* Adjust font size for mobile */
+        margin-left: 0; /* Remove margin for mobile */
+        margin-top: 5px; /* Adjust margin-top for mobile */
+    }
+
+    /* Add more mobile-specific styles as needed */
+}
+
+/* Style for the login container */
+#login {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    margin-top: -150px;
+    margin-left: 300px;
+}
+
+/* Style for the logout link */
+#logout-link {
+    text-decoration: none;
+    color: #cb9109eb;
+    font-weight: bold;
+}
+
+/* Hide the logout link by default */
+#logout-link.hidden {
+    display: none;
+}
+
+/* Show the logout link on hover */
+#login:hover #logout-link {
+    display: inline; 
 }
