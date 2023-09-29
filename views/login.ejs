@@ -16,22 +16,48 @@
 
 
 <!-----login section starts-->
-<div class="account-form-container">
-    <section class="account-form">
-        <form action="/login" method="post">
-            <h3>Foodies</h3>
-                <input type="email" required name="email" maxlength="50" placeholder="Enter your email" class="input">
-                <input type="password" required name="password" maxlength="20" placeholder="Enter your password" class="input" id="password">
-                <span class="hide-show-icon" id="password-icon" onclick="togglePassword('password')">
-                    <i class="fas fa-eye"></i>
-                </span>
-                <p>Don't have an account? <a href="/register">Register here</a></p>
-                <input type="submit" value="Login" name="submit" class="btn">
-            </div> <!-- Close the div container here -->
-        </form>
-    </section>
-</div>
+<div class="text-center center-div" id="login">
+    <div class="container w-25 border py-5">
+        <div class="title pb-5">
+           <h2 class="font-weight-bold">
+            Foodies App
+           </h2>
+            <span class="label">
+            Login for the existing user
+        </span>
+        <% if(locals.logout) {%>
+            <div class="alert alert-success text-center">
+                <%= logout%>
+            </div>
+        <%}%>
+        </div>
 
+    <form action="/login" method="POST">
+        <div class="form-group">
+            <input type="email" placeholder="email" class="form-control" value="kodego@test.com" name="email">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="password" placeholder="password" class="form-control" value="12345678" name="password">
+        </div>
+        <br>
+         <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+       
+    </form>
+    <br>
+     <% if(locals.errors) {%>
+            <div class="alert alert-danger text-center">
+                <%= errors%>
+            </div>
+        <%}%>
+         <% if(locals.isInvalid) {%>
+            <div class="alert alert-danger text-center">
+                <%= isInvalid%>
+            </div>
+        <%}%>
+      </div>
+</div>
+<!-----login section ends-->
 
 <footer class="footer">
    

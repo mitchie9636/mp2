@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= locals.title ? locals.title : 'Register' %></title>
-    <title><%= locals.title ? locals.title : 'Foodies' %></title>
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">  
-    <link rel="stylesheet" href="/static/style.css">                       <!---custom css file link-->
+    <link rel="stylesheet" href="/static/style.css">                     <!---custom css file link-->
 
 
 </head>
@@ -17,15 +16,15 @@
 <!---header section ends -->
 
 
-<!-----login section starts-->
+<!-----register section starts-->
 <div class="account-form-container">
     <section class="account-form">
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return validateForm()">
             <h3>Create New Account</h3>
-            <input type="text" required name:name maxlength="20" placeholder="enter your name"  class="input">
-            <input type="email" required name:email maxlength="20" placeholder="enter your email"  class="input">
-            <input type="password" required name:pass maxlength="20" placeholder="enter your password"  class="input">
-            <input type="password" required name:c_pass maxlength="20" placeholder="comfirm your password"  class="input">
+            <input type="text" required name="name" maxlength="20" placeholder="enter your name" class="input">
+            <input type="email" required name="email" maxlength="20" placeholder="enter your email" class="input">
+            <input type="password" required name="pass" maxlength="20" placeholder="enter your password" class="input">
+            <input type="password" required name="c_pass" maxlength="20" placeholder="confirm your password" class="input">
             <p>already have an account? <a href="/static/login.ejs">Log in</a></p>
             <input type="submit" value="register now" name="submit" class="btn">
         </form>
@@ -33,15 +32,8 @@
 </div>
 
 
-<!-----login section ends-->
 
-
-
-
-
-
-
-
+<!-----register section ends-->
 
 
 
@@ -49,11 +41,40 @@
 </footer>
 
 
-
-
-
-    <!--custom js file link-->
 <script src="/static/login.js"></script>
+
+<script>
+    function validateForm() {
+    var name = document.forms[0]["name"].value;
+    var email = document.forms[0]["email"].value;
+    var password = document.forms[0]["pass"].value;
+    var confirmPassword = document.forms[0]["c_pass"].value;
+
+    if (name.trim() === "") {
+        alert("Please enter your name.");
+        return false;
+    }
+
+    if (email.trim() === "") {
+        alert("Please enter your email.");
+        return false;
+    }
+
+    if (password.trim() === "") {
+        alert("Please enter your password.");
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+
+    return true; // Form will be submitted if all validations pass
+}
+
+</script>
 
 </body>
 </html>
