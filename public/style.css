@@ -37,7 +37,7 @@ a:visited{
 }
 
 body {
-    background-color: hsl(235, 24%, 19%);
+    background-color: rgba(220, 150, 19, 0.863);
     display: flex;
     justify-content: center;
 }
@@ -86,7 +86,7 @@ body {
   /* Style the logout link */
   #logout-link {
     text-decoration: none;
-    color: #007bff;
+    color: orange;
     font-weight: bold;
     transition: opacity 0.3s; /* Add a smooth transition effect for opacity */
   }
@@ -323,7 +323,7 @@ body {
     letter-spacing: 1px;
     text-align: center;
     font-family: Segoe UI Symbol;
-    text-shadow: 3px -2px 5px hsl(234, 84%, 46%);
+    text-shadow: 3px -2px 5px orange;
 }
 
 #search-bar {
@@ -557,7 +557,7 @@ body {
     height: 30px;
     font-size: 1.5rem;
     color: hsl(234, 39%, 85%);
-    text-shadow: 3px -2px 5px hsl(234, 84%, 46%);
+    text-shadow: 3px -2px 5px orange;
 }
 
 .card-name:hover {
@@ -614,4 +614,12 @@ body {
     text-decoration: underline;
     cursor: pointer;
     color: hsl(0, 0%, 96%)
+}
+.title h2{
+    color: white;
+    padding: 0.5rem;
+    margin-top: 13rem;
+    text-align: center;
+    justify-content: center;
+
 }
