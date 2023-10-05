@@ -8,13 +8,16 @@ const router = express.Router();
 
  //  route to live server page --------------------------------
 
-router.get('/home', (req, res) => {
-  res.render('home', { title: 'home' });
+//route to the home
+router.get('/home', (req, res)=>{
+    if(req.session.user){
+        res.render('home', {title: 'home', user: req.session.user});
+    }else{
+        res.sendStatus(403);
+    }
 });
 
-router.get('/register', (req, res) => {
-  res.render('register', { title: 'register' });
-});
+
 
 // end of routes
 
@@ -24,57 +27,68 @@ router.get('/login', (req, res) => {
   res.render('login', { title: 'Login Page' });
 });
 
-const credential = {
-  email: 'Tos@test.com',
-  password: 'Tos12345',
-};
+//route to authenticate the user
+router.post('/login',
 
-router.post('/login', [
-  check('email')
+[
+    check('email')
     .notEmpty()
-    .withMessage('Email is required.'),
+    .withMessage('email is required.'),
 
-  check('password')
+    check('password')
     .notEmpty()
-    .withMessage('Password is required.')
-    .isLength({ min: 8 })
-    .withMessage('Password must be at least 8 characters.'),
-], (req, res) => {
-  const errors = validationResult(req);
+    .withMessage('password is required.')
+    .isLength({min:8})
+    .withMessage('password must be at least 8 characters.')
+]
 
-  if (!errors.isEmpty()) {
-    console.log(errors.array());
-    res.render('login', { title: 'Login Page', errors: errors.array() });
-  } else {
-    if (req.body.email === credential.email && req.body.password === credential.password) {
-      // Set up a session
-      req.session.user = req.body.email;
-      res.redirect('/home');
-    } else {
-      res.render('login', { title: 'Login Page', isInvalid: 'Your credentials do not exist' });
+,(req, res)=>{
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        console.log(errors);
+        // res.send({ errors: errors.array() });
+        res.render('login', {title:'Login Page', errors:'Please check your input!'});
+    }else{
+        if(isCredentialCorrect(email, password)){
+            // create a session
+            req.session.user = req.body.email;
+            res.redirect('/home');
+        }else{
+            res.render('login', {title:'Login Page', isInvalid:'Your credential does not exist!'});
+        }
     }
-  }
 });
 
-// Define your dashboard route
-router.get('/home', (req, res) => {
-  if (req.session && req.session.user) {
-    res.render('home', { title: 'home', user: req.session.user });
-  } else {
-    res.sendStatus(403);
-  }
-});
+function isCredentialCorrect(email, password){
+    //fake database
+       const credential = {
+       email:'Tos@test.com',
+       password: 'Tos12345'
+       }
 
-// Post logout route
-router.post('/logout', (req, res) => {
-  req.session.destroy(function (err) {
-    if (err) {
-      console.log(err);
-      res.send(err);
-    } else {
-      res.render('login', { title: 'Login Page', logout: 'Logout successfully!' });
-    }
-  });
+       if(email == credential.email && password == credential.password){
+           return true;
+       }else{
+           return false;
+       }
+   };
+
+
+
+//route to destroy the session
+router.post('/logout', (req, res)=>{
+    req.session.destroy(function(err){
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            res.render('login', {title:'Login Page', logout:'Logout successfully!'});
+        }
+    });
 });
 
 

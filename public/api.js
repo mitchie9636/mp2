@@ -167,7 +167,7 @@ function addRemoveToFavList(id) {
     }
     localStorage.setItem(dbObjectFavList, JSON.stringify(db));
     if (detailsPageLikeBtn != null) {
-        detailsPageLikeBtn.innerHTML = isFav(db, id) ? 'Remove From Favourite' : 'Add To Favourite';
+        detailsPageLikeBtn.innerHTML = isFav(db, id) ? 'Remove From Favorite' : 'Add To Favorite';
     }
     showMealList();
     showFavMealList();
@@ -226,8 +226,8 @@ async function showMealDetails(itemId, searchInput) {
             ${mealDetails.meals[0].strCategory}
             </span>
         </div>
-        <div class="item-ingrident">
-            <strong>Ingrident: </strong>
+        <div class="item-ingridient">
+            <strong>Ingridient: </strong>
             <span class="item-text">
             ${mealDetails.meals[0].strIngredient1},${mealDetails.meals[0].strIngredient2},
             ${mealDetails.meals[0].strIngredient3},${mealDetails.meals[0].strIngredient4}
