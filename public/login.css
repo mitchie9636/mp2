@@ -20,15 +20,8 @@ body {
 
 .container{
     position: relative;
-    max-width: 50px;
-    width: 100%;
-    background: #ffffffb6;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    overflow: hidden;
+    width: 50%;
+    background: #ffffff41;
 }
 
 .container .forms{
